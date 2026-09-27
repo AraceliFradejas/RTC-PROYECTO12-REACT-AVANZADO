@@ -16,7 +16,7 @@
 | Código de la aplicación | [src](src) |
 | Revisión documentada | 27 de septiembre de 2026 |
 
-> Esta memoria explica la organización del juego, las decisiones sobre estado y renderizados y las comprobaciones realizadas. Las capturas muestran la aplicación real. Se diferencia la compilación local, las pruebas contra producción y el recorrido manual en Safari; no se presentan los perfiles móviles como dispositivos físicos.
+> Esta memoria recoge la organización del juego, las decisiones sobre estado y renderizados y las pruebas realizadas. La galería acompaña las explicaciones con capturas de escritorio y móvil.
 
 ## Contenido
 
@@ -75,7 +75,7 @@ El estado se mantiene en React. No se incorporan cuentas, servidor, base de dato
 | Datos solo en React | Proveedores por encima de las rutas, sin almacenamiento persistente. | Puntuación conservada al navegar y sesión vacía tras recargar. |
 | Repositorio público | Código y documentación accesibles en GitHub. | Enlace de repositorio y web publicados. |
 
-La medición de renderizados se limita al avance del reloj. Responder, pedir una pista o mover una era debe actualizar los componentes correspondientes. No se afirma que la aplicación nunca vuelva a renderizarse ni que una prueba automática equivalga a una evaluación del profesorado.
+Al responder, pedir una pista o mover una era, React actualiza los componentes correspondientes. La optimización del reloj se comprueba por separado en la sección de pruebas.
 
 ## 4. Tecnologías
 
@@ -303,7 +303,9 @@ Las pruebas móviles utilizan Chromium con perfil de iPhone 13: pantalla de 390 
 
 ### Medición de renderizados
 
-El script instala una sonda de React DevTools durante desarrollo y cuenta trabajo confirmado en los componentes al avanzar tres segundos.
+La comprobación principal consiste en aislar los segundos dentro de `Timer`: `Game` recibe el plazo, pero no el valor que cambia cada segundo.
+
+Como comprobación adicional, `scripts/check-renders.mjs` utiliza una sonda experimental de React DevTools en desarrollo. Cuenta trabajo confirmado al avanzar tres segundos. Depende de detalles internos de React y puede necesitar ajustes al actualizarlo; no se utiliza en la aplicación publicada.
 
 | Componente | Antes | Después |
 | --- | ---: | ---: |
@@ -420,12 +422,6 @@ Bloquear el gesto táctil en toda la tarjeta dificultaría recorrer una lista la
 
 Las correcciones de proyectos anteriores se aplican cuando corresponden. Se comparte `isChronologicalOrder`, se separan hallazgos, historial y vaciado del cuaderno y se centraliza la duración del reloj. El número de aciertos se calcula una vez en resultados y se pasa a `ReaderPortrait`.
 
-Aquí no hay controladores, Cloudinary ni reemplazo de archivos que necesiten rollback. El buscador usa `includes` sobre texto y no construye expresiones regulares con la entrada del usuario; por tanto, no necesita `escapeRegExp`.
-
-### Actualizar documentación y distinguir evidencias
-
-La publicación estaba resuelta, pero quedaban frases que la presentaban como pendiente, especialmente en inglés. Esta revisión unifica el estado descrito y distingue pruebas locales, producción y Safari. También integra arrastre, contador y sesión en el cuerpo de la memoria.
-
 ## 14. Aprendizajes del proyecto
 
 El proyecto permite relacionar una acción concreta con una transición: responder cambia la fase y los puntos; mover una tarjeta cambia el orden; comprobar una cronología registra un intento. El reducer reúne esas reglas y facilita probar casos que no deben modificar el estado.
@@ -481,10 +477,6 @@ Los metadatos incluyen título, descripción, autoría, Open Graph, Twitter Card
 Vercel devuelve HTTP 404 en rutas inexistentes. Bajo `/en/`, sirve inicialmente el documento de error español y React lo adapta al idioma de la URL. Las rutas inglesas existentes reciben su HTML en inglés desde el servidor.
 
 `llms.txt` explica el propósito del archivo y dirige a contenido y fuentes visibles. Es informativo: no garantiza aparecer en respuestas de asistentes. Tampoco se atribuyen posiciones SEO, puntuaciones Lighthouse ni Core Web Vitals sin mediciones que las respalden.
-
-### Publicación y entrega académica
-
-Publicar la web y enviar una entrega en el campus son acciones distintas. Esta memoria documenta el producto y sus comprobaciones; no acredita una calificación.
 
 ## 17. Fuentes y autoría
 

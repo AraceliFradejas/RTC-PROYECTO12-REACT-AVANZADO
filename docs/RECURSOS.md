@@ -3,7 +3,7 @@
 ## Escena de la portada
 
 - Archivo utilizado: [reading-room.jpg](../public/images/reading-room.jpg).
-- Creación: herramienta integrada de generación de imágenes (`image_gen`), el 27 de septiembre de 2026. No se utilizó el modo CLI.
+- Creación: imagen generada con IA mediante la herramienta de generación de imágenes de OpenAI, el 27 de septiembre de 2026.
 - Uso: fondo de la portada, acompañado de texto HTML independiente; se trata como imagen decorativa.
 - Formato de distribución: JPEG, 1536 × 1024, aproximadamente 288 KB. El PNG original de generación se conserva fuera del repositorio. La conversión únicamente optimiza el formato.
 - Naturaleza: recreación de una escena editorial, no fotografía de un lugar real. No representa a Taylor Swift ni utiliza retratos, portadas, logotipos o imágenes oficiales. Las marcas de escritura son decorativas, no una letra de canción reproducida.

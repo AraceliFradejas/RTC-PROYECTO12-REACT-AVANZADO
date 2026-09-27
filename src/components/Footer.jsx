@@ -8,10 +8,14 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-main">
         <div>
-          <Link className="footer-title" to="/">The Poets Archive.</Link>
+          <Link className="footer-title" to="/">
+            The Poets Archive.
+          </Link>
           <p className="footer-tagline">{t('Para quienes sienten las palabras.')}</p>
         </div>
-        <Link className="footer-sources" to="/archivo">{t('Fuentes y créditos ↗')}</Link>
+        <Link className="footer-sources" to="/archivo">
+          {t('Fuentes y créditos ↗')}
+        </Link>
       </div>
       <div className="footer-details">
         <p className="footer-credit">
@@ -23,14 +27,23 @@ export default function Footer() {
         <div className="footer-academic">
           <p>
             {t('Proyecto académico del máster Rock The Code de')}{' '}
-            <a href="https://thepower.education/thepowermba/tech" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://thepower.education/thepowermba/tech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               The Power Tech School
-            </a>.
+            </a>
+            .
           </p>
           <p className="footer-disclaimer">
-            {t('Juego de React avanzado con fines educativos. Proyecto independiente, sin afiliación con Taylor Swift ni sus representantes.')}
+            {t(
+              'Juego de React avanzado con fines educativos. Proyecto independiente, sin afiliación con Taylor Swift ni sus representantes.',
+            )}
           </p>
-          <p className="footer-inspiration">{t('Hecho con cariño swiftie, inspirado en las palabras y la música de Taylor Swift.')}</p>
+          <p className="footer-inspiration">
+            {t('Hecho con cariño swiftie, inspirado en las palabras y la música de Taylor Swift.')}
+          </p>
         </div>
       </div>
     </footer>

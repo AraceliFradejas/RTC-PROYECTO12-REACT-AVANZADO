@@ -14,15 +14,21 @@ export default function ClearNotebook({ disabled }) {
 
   return (
     <div className="notebook-clear">
-      {confirmClear ? <>
-        <p>{t('Se borrarán los hallazgos, favoritos, sellos e historial. La partida actual se conserva.')}</p>
-        <button className="button button-outline" onClick={clearNotebook}>
-          {t('Sí, vaciar mi cuaderno')}
-        </button>
-        <button className="text-button" onClick={() => setConfirmClear(false)}>
-          {t('Cancelar')}
-        </button>
-      </> : (
+      {confirmClear ? (
+        <>
+          <p>
+            {t(
+              'Se borrarán los hallazgos, favoritos, sellos e historial. La partida actual se conserva.',
+            )}
+          </p>
+          <button className="button button-outline" onClick={clearNotebook}>
+            {t('Sí, vaciar mi cuaderno')}
+          </button>
+          <button className="text-button" onClick={() => setConfirmClear(false)}>
+            {t('Cancelar')}
+          </button>
+        </>
+      ) : (
         <button className="text-button" disabled={disabled} onClick={() => setConfirmClear(true)}>
           {t('Vaciar mi cuaderno')}
         </button>

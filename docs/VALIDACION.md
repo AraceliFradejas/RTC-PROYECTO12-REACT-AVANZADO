@@ -16,8 +16,6 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | `npm run check:renders` | Tres cambios de segundo sin nuevos renderizados de Game ni QuestionCard |
 | Instalación de dependencias | Cero vulnerabilidades notificadas por npm tras la actualización |
 
-Los números corresponden a esta revisión. Los recursos de terceros y las dependencias pueden cambiar; no se asume que el resultado sea permanente.
-
 ## Enlaces externos
 
 Revisión de los veinte destinos del catálogo (vídeos, canciones y pasajes), referencias del formato, archivo de eras, escuela y GitHub. Evidencias y límites en [ENLACES.md](ENLACES.md).
@@ -49,7 +47,7 @@ Revisión de los veinte destinos del catálogo (vídeos, canciones y pasajes), r
 
 ## Medición de renderizados
 
-El script `scripts/check-renders.mjs` utiliza el protocolo de React DevTools en desarrollo. Cuenta commits con trabajo de renderizado de Game, QuestionCard y Timer. El reloj de prueba avanza tres segundos.
+El script `scripts/check-renders.mjs` es una sonda experimental que utiliza detalles internos de React DevTools en desarrollo. Puede necesitar ajustes al actualizar React. Cuenta commits con trabajo de renderizado de Game, QuestionCard y Timer. El reloj de prueba avanza tres segundos.
 
 | Componente | Antes | Después |
 | --- | ---: | ---: |

@@ -9,10 +9,13 @@ export default function RouteEffects() {
   const previousPath = useRef(pathname);
   useEffect(() => {
     const route = basePath(pathname);
-    const page = (language === 'en' ? englishPages[route] : pages[route]) || (language === 'en' ? englishNotFound : notFound);
+    const page =
+      (language === 'en' ? englishPages[route] : pages[route]) ||
+      (language === 'en' ? englishNotFound : notFound);
     document.documentElement.lang = locale;
     document.title = `${page.title} · ${siteName}`;
-    const meta = (selector, value) => document.querySelector(selector)?.setAttribute('content', value);
+    const meta = (selector, value) =>
+      document.querySelector(selector)?.setAttribute('content', value);
     meta('meta[name="description"]', page.description);
     meta('meta[name="robots"]', page.private ? 'noindex,follow' : 'index,follow');
     meta('meta[property="og:title"]', document.title);
@@ -24,8 +27,11 @@ export default function RouteEffects() {
     if (canonical) {
       canonical.href = new URL(pathname, canonical.href).href;
       meta('meta[property="og:url"]', canonical.href);
-      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => {
-        link.href = new URL(localPath(route, link.hreflang === 'en-GB' ? 'en' : 'es'), canonical.href).href;
+      document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => {
+        link.href = new URL(
+          localPath(route, link.hreflang === 'en-GB' ? 'en' : 'es'),
+          canonical.href,
+        ).href;
       });
     }
     const schema = document.querySelector('script[type="application/ld+json"]');

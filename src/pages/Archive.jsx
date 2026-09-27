@@ -3,10 +3,110 @@ import { useLanguage } from '../context/LanguageContext';
 import { questions, authorNames } from '../data/questions';
 export default function Archive() {
   const { t } = useLanguage();
-  return <article className="reading-page"><p className="eyebrow">{t("EL ARCHIVO / ORIGEN Y REFERENCIAS")}</p><h1 tabIndex={-1}>{t("La música también")}<br /><em>{t("se lee.")}</em></h1><p className="lead">{t("Una pequeña biblioteca donde las canciones de Taylor Swift conversan con el teatro de William Shakespeare.")}</p>
-    <section className="archive-story"><h2>{t("De la discografía a las palabras")}</h2><p>{t("Este proyecto continúa mi recorrido con el universo swiftie. Después de crear una aplicación sobre la discografía de Taylor Swift, quería volver a sus canciones desde otro lugar: jugar con sus imágenes y descubrir lo cerca que pueden sentirse de un texto clásico.")}</p><p>{t("La estética toma como referencia el papel, la tinta y la intimidad de ")}<cite>{t("The Tortured Poets Department")}</cite>{t(". La composición gráfica y los textos de acompañamiento se han creado para este juego.")}</p><a href="https://github.com/AraceliFradejas/RTC-PROYECTO6-API-REST" target="_blank" rel="noreferrer">{t("Visitar el proyecto de discografía ↗")}</a></section>
-    <section><h2>{t("Las obras del archivo")}</h2><p>{t("Fragmentos breves en su idioma original. Las canciones enlazan a sus vídeos oficiales, Apple Music y Spotify; las obras de Shakespeare, al pasaje en Folger Shakespeare Library. Las explicaciones son comentarios del proyecto.")}</p><p className="small">{t("Aquí puedes ver las respuestas. Si prefieres descubrirlas jugando, vuelve después de tu primera ronda.")}</p><ul className="source-list">{questions.map((question) => <li key={question.id}><span><strong>{question.work}</strong><small>{authorNames[question.author]} · {t(question.collection)}</small><small>{t(question.credits)}</small></span><WorkLinks question={question}/></li>)}</ul></section>
-    <section className="archive-story"><h2>{t('Referencias del formato')}</h2><p>{t('La idea de distinguir entre Taylor Swift y Shakespeare aparece en juegos como estos. Son referencias del formato; las fuentes de nuestras preguntas están en cada obra.')}</p><div className="work-links"><a href="https://www.jetpunk.com/user-quizzes/1596124/taylor-swift-or-shakespeare" target="_blank" rel="noopener noreferrer">JetPunk · Taylor Swift or Shakespeare? ↗</a><a href="https://triviacreator.com/quiz/xgXwToS" target="_blank" rel="noopener noreferrer">TriviaCreator · Who Said It? ↗</a></div></section>
-    <p className="small">{t('La escena de la portada es una recreación visual generada para este proyecto; no representa un lugar real ni utiliza imágenes oficiales de la artista.')}</p><aside className="note"><h2>{t("Un proyecto personal y educativo")}</h2><p>{t("Desarrollado por Araceli Fradejas Muñoz para el módulo React avanzado de Rock The Code · The Power Tech School. Proyecto independiente, no oficial y sin afiliación con Taylor Swift ni con sus representantes. Las obras citadas pertenecen a sus respectivos titulares.")}</p><p>{t("No se reproducen canciones, vídeos ni letras completas. No hay cuentas, analítica ni almacenamiento persistente de partidas.")}</p></aside>
-  </article>;
+  return (
+    <article className="reading-page">
+      <p className="eyebrow">{t('EL ARCHIVO / ORIGEN Y REFERENCIAS')}</p>
+      <h1 tabIndex={-1}>
+        {t('La música también')}
+        <br />
+        <em>{t('se lee.')}</em>
+      </h1>
+      <p className="lead">
+        {t(
+          'Una pequeña biblioteca donde las canciones de Taylor Swift conversan con el teatro de William Shakespeare.',
+        )}
+      </p>
+      <section className="archive-story">
+        <h2>{t('De la discografía a las palabras')}</h2>
+        <p>
+          {t(
+            'Este proyecto continúa mi recorrido con el universo swiftie. Después de crear una aplicación sobre la discografía de Taylor Swift, quería volver a sus canciones desde otro lugar: jugar con sus imágenes y descubrir lo cerca que pueden sentirse de un texto clásico.',
+          )}
+        </p>
+        <p>
+          {t('La estética toma como referencia el papel, la tinta y la intimidad de ')}
+          <cite>{t('The Tortured Poets Department')}</cite>
+          {t(
+            '. La composición gráfica y los textos de acompañamiento se han creado para este juego.',
+          )}
+        </p>
+        <a
+          href="https://github.com/AraceliFradejas/RTC-PROYECTO6-API-REST"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {t('Visitar el proyecto de discografía ↗')}
+        </a>
+      </section>
+      <section>
+        <h2>{t('Las obras del archivo')}</h2>
+        <p>
+          {t(
+            'Fragmentos breves en su idioma original. Las canciones enlazan a sus vídeos oficiales, Apple Music y Spotify; las obras de Shakespeare, al pasaje en Folger Shakespeare Library. Las explicaciones son comentarios del proyecto.',
+          )}
+        </p>
+        <p className="small">
+          {t(
+            'Aquí puedes ver las respuestas. Si prefieres descubrirlas jugando, vuelve después de tu primera ronda.',
+          )}
+        </p>
+        <ul className="source-list">
+          {questions.map((question) => (
+            <li key={question.id}>
+              <span>
+                <strong>{question.work}</strong>
+                <small>
+                  {authorNames[question.author]} · {t(question.collection)}
+                </small>
+                <small>{t(question.credits)}</small>
+              </span>
+              <WorkLinks question={question} />
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="archive-story">
+        <h2>{t('Referencias del formato')}</h2>
+        <p>
+          {t(
+            'La idea de distinguir entre Taylor Swift y Shakespeare aparece en juegos como estos. Son referencias del formato; las fuentes de nuestras preguntas están en cada obra.',
+          )}
+        </p>
+        <div className="work-links">
+          <a
+            href="https://www.jetpunk.com/user-quizzes/1596124/taylor-swift-or-shakespeare"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JetPunk · Taylor Swift or Shakespeare? ↗
+          </a>
+          <a
+            href="https://triviacreator.com/quiz/xgXwToS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TriviaCreator · Who Said It? ↗
+          </a>
+        </div>
+      </section>
+      <p className="small">
+        {t(
+          'La escena de la portada es una recreación visual generada para este proyecto; no representa un lugar real ni utiliza imágenes oficiales de la artista.',
+        )}
+      </p>
+      <aside className="note">
+        <h2>{t('Un proyecto personal y educativo')}</h2>
+        <p>
+          {t(
+            'Desarrollado por Araceli Fradejas Muñoz para el módulo React avanzado de Rock The Code · The Power Tech School. Proyecto independiente, no oficial y sin afiliación con Taylor Swift ni con sus representantes. Las obras citadas pertenecen a sus respectivos titulares.',
+          )}
+        </p>
+        <p>
+          {t(
+            'No se reproducen canciones, vídeos ni letras completas. No hay cuentas, analítica ni almacenamiento persistente de partidas.',
+          )}
+        </p>
+      </aside>
+    </article>
+  );
 }

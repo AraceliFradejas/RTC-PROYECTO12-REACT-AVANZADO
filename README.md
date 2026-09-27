@@ -10,7 +10,7 @@ Proyecto de **React avanzado** como entrega del **MÓDULO 7: FRONTEND [REACT]** 
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES_Modules-f7df1e?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Vercel](https://img.shields.io/badge/Vercel-Publicado-000000?logo=vercel&logoColor=white)](https://the-poets-archive.vercel.app)
 
-> **Estado del proyecto:** aplicación publicada en Vercel, con tres desafíos, cuaderno de sesión e interfaz en castellano e inglés británico. El repositorio incluye pruebas de reglas, recorridos de navegador y capturas reales. El alcance de cada comprobación está documentado; la publicación no equivale a la aprobación del profesorado.
+> **Estado del proyecto:** aplicación publicada en Vercel, con tres desafíos, cuaderno de sesión e interfaz en castellano e inglés británico. El repositorio incluye la memoria, las pruebas y las capturas de la aplicación.
 
 [Jugar en castellano](https://the-poets-archive.vercel.app) · [Play in English](https://the-poets-archive.vercel.app/en) · [Memoria técnica y evidencias](MEMORIA.md)
 
@@ -172,9 +172,9 @@ Para ejecutar los recorridos contra la web publicada:
 PLAYWRIGHT_BASE_URL=https://the-poets-archive.vercel.app npm run test:e2e
 ```
 
-Se han comprobado 18 pruebas unitarias y recorridos de partida, idiomas, cuaderno, cronología, arrastre, visibilidad del reloj y conservación de puntuación. Las ejecuciones se han realizado por bloques; no se presenta su suma como una única ejecución final. [Resultados y alcance](docs/VALIDACION.md).
+Las comprobaciones cubren reglas, idiomas, cuaderno, cronología, arrastre, reloj y conservación de puntuación. Los resultados y el entorno de cada ejecución se recogen en [Validación](docs/VALIDACION.md).
 
-La medición del temporizador muestra tres cambios de segundo sin nuevos renderizados de `Game` ni `QuestionCard`. Las pruebas móviles utilizan Chromium con un perfil de iPhone 13: pantalla de 390 × 844 y área útil de 390 × 664 píxeles CSS. Esto no equivale a una prueba en un iPhone físico. Safari de macOS se revisó con un recorrido manual limitado, anterior a las últimas mejoras de arrastre y contador.
+`check:renders` es una sonda experimental de desarrollo para observar las actualizaciones del reloj. Utiliza detalles internos de React; su alcance se explica en la [memoria](MEMORIA.md#medición-de-renderizados).
 
 ### Evidencias destacadas
 
@@ -245,7 +245,7 @@ Proyecto académico del máster Rock The Code · The Power Tech School.
 
 It brings together Taylor Swift’s music and Shakespeare’s writing through three challenges. The visual style takes inspiration from the paper, ink and intimate atmosphere of *The Tortured Poets Department*. It continues the musical theme explored in [Project 6](https://github.com/AraceliFradejas/RTC-PROYECTO6-API-REST).
 
-> **Project status:** published on [Vercel](https://the-poets-archive.vercel.app/en), with working Spanish and British English interfaces. Test evidence and its limitations are documented in the repository. Publication does not imply academic approval.
+> **Project status:** published on [Vercel](https://the-poets-archive.vercel.app/en), with working Spanish and British English interfaces. The repository includes the technical report, tests and application screenshots.
 
 ### Academic goals and technologies
 
@@ -291,7 +291,7 @@ No credentials or external API are required to play. Set `SITE_URL=https://the-p
 
 Available checks are `npm run lint`, `npm test`, `npm run test:e2e` and `npm run check:renders`. Install Chromium with `npx playwright install chromium` if Chrome is not available at the configured macOS location. Set `PLAYWRIGHT_BASE_URL` to test a deployment instead of the local preview.
 
-The evidence covers 18 unit tests and browser journeys executed in documented batches. Mobile tests use Chromium with an iPhone 13 profile, not a physical iPhone. A limited manual Safari check predates the latest drag and timer changes. The timer measurement confirmed no additional Game or QuestionCard renders during three seconds of countdown.
+The [validation record](docs/VALIDACION.md) details the results and environments used for each test run. Browser checks cover both languages, the three chapters, drag controls, the visible timer and session scores. Mobile tests use an emulated iPhone 13 profile. `check:renders` is an experimental development probe using React internals, separate from the published application.
 
 ### Sources, accessibility and deployment
 

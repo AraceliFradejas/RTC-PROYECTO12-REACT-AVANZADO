@@ -4,7 +4,15 @@ const State = createContext(null);
 const Actions = createContext(null);
 export function ChronologyProvider({ children }) {
   const [state, dispatch] = useReducer(chronologyReducer, chronologyInitial);
-  return <Actions.Provider value={dispatch}><State.Provider value={state}>{children}</State.Provider></Actions.Provider>;
+  return (
+    <Actions.Provider value={dispatch}>
+      <State.Provider value={state}>{children}</State.Provider>
+    </Actions.Provider>
+  );
 }
-export function useChronologyState() { return useContext(State); }
-export function useChronologyDispatch() { return useContext(Actions); }
+export function useChronologyState() {
+  return useContext(State);
+}
+export function useChronologyDispatch() {
+  return useContext(Actions);
+}

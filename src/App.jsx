@@ -18,9 +18,41 @@ import './styles/layout.css';
 import './styles/reading.css';
 import './styles/enhanced-game.css';
 export default function App() {
-  const routes = [['/', <Home/>], ['/instrucciones', <Instructions/>], ['/archivo', <Archive/>], ['/partida', <Game/>], ['/resultados', <Results/>], ['/cuaderno', <Notebook/>], ['/cronologia', <Chronology/>]];
-  return <LanguageProvider><NotebookProvider><ChronologyProvider><GameProvider><Routes><Route element={<Layout/>}>
-    {routes.flatMap(([path, element]) => [path, englishPaths[path]].map(url => <Route key={url} path={url} element={element}/>))}
-    <Route path="*" element={<EmptyState title="Esta página se ha traspapelado." description="La dirección que buscas no forma parte del archivo."/>}/>
-  </Route></Routes></GameProvider></ChronologyProvider></NotebookProvider></LanguageProvider>;
+  const routes = [
+    ['/', <Home />],
+    ['/instrucciones', <Instructions />],
+    ['/archivo', <Archive />],
+    ['/partida', <Game />],
+    ['/resultados', <Results />],
+    ['/cuaderno', <Notebook />],
+    ['/cronologia', <Chronology />],
+  ];
+  return (
+    <LanguageProvider>
+      <NotebookProvider>
+        <ChronologyProvider>
+          <GameProvider>
+            <Routes>
+              <Route element={<Layout />}>
+                {routes.flatMap(([path, element]) =>
+                  [path, englishPaths[path]].map((url) => (
+                    <Route key={url} path={url} element={element} />
+                  )),
+                )}
+                <Route
+                  path="*"
+                  element={
+                    <EmptyState
+                      title="Esta página se ha traspapelado."
+                      description="La dirección que buscas no forma parte del archivo."
+                    />
+                  }
+                />
+              </Route>
+            </Routes>
+          </GameProvider>
+        </ChronologyProvider>
+      </NotebookProvider>
+    </LanguageProvider>
+  );
 }

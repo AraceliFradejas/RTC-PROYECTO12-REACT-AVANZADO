@@ -39,10 +39,6 @@ No se debe añadir una reescritura global que envíe todas las peticiones a la p
 - Revisar móvil real, Safari y teclado; la automatización local utiliza Chromium.
 - Completar el enlace de demo del README y actualizar el estado de la memoria con evidencias.
 
-## Git y autoría
-
-Los nuevos commits se crean con nombre y correo ya utilizados por Araceli en el repositorio, mensajes en castellano y sin trailers de coautoría. El commit inicial remoto se conserva sin reescribirlo. GitHub figura como committer de ese commit inicial creado desde la plataforma; no es una segunda autoría del proyecto.
-
 ## Alcance de la revisión
 
 Se han comprobado por HTTP las rutas públicas y de juego, el HTML de archivo, los metadatos, sitemap, robots y llms. En Chrome se ha abierto la web pública, iniciado una partida, respondido correctamente y guardado una obra en el cuaderno. También se ejecutaron las 28 pruebas automatizadas contra el dominio público, todas correctas, incluyendo los tres capítulos y ambos idiomas. La variable `PLAYWRIGHT_BASE_URL` permite repetir esta comprobación sin iniciar un servidor local.

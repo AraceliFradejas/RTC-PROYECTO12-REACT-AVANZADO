@@ -16,11 +16,74 @@ export default function Game() {
   if (state.phase === 'finished') return <Navigate to={localPath('/resultados')} replace />;
   const question = state.questions[state.index];
   const revealed = state.phase === 'reveal';
-  return <div className="game-page">
-    <div className="game-topline"><Link to="/" onClick={reset}>{t("← Abandonar partida")}</Link><span className="eyebrow">{state.mode === 'calm' ? t("LECTURA SIN PRISA") : t("A CONTRARRELOJ")}</span></div>
-    <div className={`game-toolbar${state.mode === 'timed' && !revealed ? ' game-toolbar-timed' : ''}`}><span>{t("Fragmento ")}{state.index + 1} <span className="muted">/ {state.questions.length}</span></span><span>{state.score}{t(" puntos")}</span>{state.mode === 'timed' && !revealed && <Timer key={`${state.round}-${question.id}`} deadline={state.deadline} questionId={question.id} onAnswer={answer} />}</div>
-    <p className="game-chapter eyebrow">{t(state.challenge === "works" ? "CAPÍTULO II · LA OBRA OCULTA" : "CAPÍTULO I · ENTRE DOS PLUMAS")}</p><ReadingProgress state={state}/><progress value={state.answers.length} max={state.questions.length} aria-label={t("Fragmentos respondidos")} />
-    <QuestionCard question={question} number={state.index + 1} hinted={state.hinted} />
-    {!revealed ? <><AnswerOptions question={question} onAnswer={answer} /><div className="hint-row"><button className="text-button" onClick={hint} disabled={state.hinted || !state.hintsLeft}>{state.hinted ? t("Pista abierta · este acierto vale 50 puntos") : t('Abrir una pista ({count} disponibles)', { count: state.hintsLeft })}</button><span className="small">{t("Acierto sin pista: 100 puntos")}</span></div></> : <Revelation question={question} answer={state.answers.at(-1)} onNext={next} last={state.index === state.questions.length - 1} />}
-  </div>;
+  return (
+    <div className="game-page">
+      <div className="game-topline">
+        <Link to="/" onClick={reset}>
+          {t('← Abandonar partida')}
+        </Link>
+        <span className="eyebrow">
+          {state.mode === 'calm' ? t('LECTURA SIN PRISA') : t('A CONTRARRELOJ')}
+        </span>
+      </div>
+      <div
+        className={`game-toolbar${state.mode === 'timed' && !revealed ? ' game-toolbar-timed' : ''}`}
+      >
+        <span>
+          {t('Fragmento ')}
+          {state.index + 1} <span className="muted">/ {state.questions.length}</span>
+        </span>
+        <span>
+          {state.score}
+          {t(' puntos')}
+        </span>
+        {state.mode === 'timed' && !revealed && (
+          <Timer
+            key={`${state.round}-${question.id}`}
+            deadline={state.deadline}
+            questionId={question.id}
+            onAnswer={answer}
+          />
+        )}
+      </div>
+      <p className="game-chapter eyebrow">
+        {t(
+          state.challenge === 'works'
+            ? 'CAPÍTULO II · LA OBRA OCULTA'
+            : 'CAPÍTULO I · ENTRE DOS PLUMAS',
+        )}
+      </p>
+      <ReadingProgress state={state} />
+      <progress
+        value={state.answers.length}
+        max={state.questions.length}
+        aria-label={t('Fragmentos respondidos')}
+      />
+      <QuestionCard question={question} number={state.index + 1} hinted={state.hinted} />
+      {!revealed ? (
+        <>
+          <AnswerOptions question={question} onAnswer={answer} />
+          <div className="hint-row">
+            <button
+              className="text-button"
+              onClick={hint}
+              disabled={state.hinted || !state.hintsLeft}
+            >
+              {state.hinted
+                ? t('Pista abierta · este acierto vale 50 puntos')
+                : t('Abrir una pista ({count} disponibles)', { count: state.hintsLeft })}
+            </button>
+            <span className="small">{t('Acierto sin pista: 100 puntos')}</span>
+          </div>
+        </>
+      ) : (
+        <Revelation
+          question={question}
+          answer={state.answers.at(-1)}
+          onNext={next}
+          last={state.index === state.questions.length - 1}
+        />
+      )}
+    </div>
+  );
 }

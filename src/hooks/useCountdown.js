@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 
 export function useCountdown(deadline, onExpire) {
-  const [remaining, setRemaining] = useState(() => Math.max(0, Math.ceil((deadline - Date.now()) / 1000)));
+  const [remaining, setRemaining] = useState(() =>
+    Math.max(0, Math.ceil((deadline - Date.now()) / 1000)),
+  );
   useEffect(() => {
     let expired = false;
     const tick = () => {
