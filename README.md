@@ -22,7 +22,9 @@ Proyecto de **React avanzado** como entrega del **MÓDULO 7: FRONTEND [REACT]** 
 
 ## Descripción
 
-**The Poets Archive** es la identidad del archivo y **The Tortured Poets Challenge** el nombre del juego. La idea parte de una pregunta: ¿sería capaz de distinguir una frase de Taylor Swift de una de Shakespeare sin conocer su procedencia?
+**The Poets Archive** es la identidad del archivo y **The Tortured Poets Challenge** el nombre del juego.
+
+Al pensar en un juego para esta entrega, me acordé de los vídeos de TikTok en los que muchos swifties se ponen a prueba con frases: ¿esto lo escribió Taylor Swift o Shakespeare? Me pareció una buena idea llevar ese reto a un juego digital, donde poder elegir una respuesta y descubrir después de qué canción u obra sale cada fragmento.
 
 Después de trabajar la discografía en el [Proyecto 6](https://github.com/AraceliFradejas/RTC-PROYECTO6-API-REST), he retomado esa temática desde una aplicación de React. Aquí las canciones se convierten en preguntas, las respuestas conducen a sus fuentes y las obras descubiertas forman un cuaderno personal durante la sesión.
 
@@ -244,6 +246,8 @@ Proyecto académico del máster Rock The Code · The Power Tech School.
 **The Poets Archive · The Tortured Poets Challenge** is an educational project for **MODULE 7: FRONTEND [REACT]**, part of the **ROCK THE CODE** master’s programme at **The Power Tech School**, created by **Araceli Fradejas Muñoz**.
 
 It brings together Taylor Swift’s music and Shakespeare’s writing through three challenges. The visual style takes inspiration from the paper, ink and intimate atmosphere of *The Tortured Poets Department*. It continues the musical theme explored in [Project 6](https://github.com/AraceliFradejas/RTC-PROYECTO6-API-REST).
+
+When thinking of a game for this assignment, I remembered TikTok videos where Swifties test themselves with quotes: did Taylor Swift or Shakespeare write this? I liked the idea of turning that challenge into a digital game, where you could choose an answer and then discover which song or play each excerpt comes from.
 
 > **Project status:** published on [Vercel](https://the-poets-archive.vercel.app/en), with working Spanish and British English interfaces. The repository includes the technical report, tests and application screenshots.
 

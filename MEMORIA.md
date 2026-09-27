@@ -40,7 +40,9 @@
 
 ## 1. Contexto y motivación
 
-Después de trabajar con canciones y álbumes de Taylor Swift en el Proyecto 6, he querido volver a esa temática para practicar React avanzado. La pregunta «¿Taylor Swift o Shakespeare?» permite unir música y literatura: leer una frase, reconocer su voz y descubrir la obra de la que procede.
+Al pensar en qué juego podía hacer para esta entrega, me acordé de los vídeos de TikTok en los que muchos swifties intentan adivinar si una frase es de Taylor Swift o de Shakespeare. De ahí surgió la idea: ¿por qué no tener ese reto en un juego digital?
+
+Después de trabajar con canciones y álbumes de Taylor Swift en el Proyecto 6, esta propuesta me permitía retomar una temática que me gusta y practicar React avanzado. El cruce con Shakespeare parte de ese juego de reconocer las frases; al responder, se descubre la canción o la obra de la que procede cada una.
 
 La idea inicial se amplía con un segundo desafío de títulos y una cronología de álbumes. El cuaderno reúne las obras descubiertas y las partidas terminadas, para que el recorrido tenga continuidad durante la sesión.
 
