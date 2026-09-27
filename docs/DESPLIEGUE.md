@@ -1,22 +1,24 @@
 # Despliegue · The Tortured Poets Challenge
 
-El repositorio incluye configuración para Vercel. Esta guía no implica que la web ya esté publicada.
+Web publicada el 27 de septiembre de 2026: [The Poets Archive](https://the-poets-archive.vercel.app).
 
-## Preparación
+Proyecto Vercel: `rtc-proyecto-12-react-avanzado`, conectado a la rama `main` de GitHub. Dominio principal: `the-poets-archive.vercel.app`. La dirección inicial `rtc-proyecto-12-react-avanzado.vercel.app` redirige a la principal.
+
+## Configuración reproducible
 
 1. Importar `AraceliFradejas/RTC-PROYECTO12-REACT-AVANZADO` en Vercel.
-2. Utilizar la raíz del repositorio, Node.js 22, `npm run build` y salida `dist`.
+2. Utilizar la raíz del repositorio, una versión de Node.js compatible con `package.json`, `npm run build` y salida `dist`.
 3. Asignar el dominio definitivo del proyecto.
 4. Añadir `SITE_URL` con el origen HTTPS, sin ruta ni barra final, y volver a desplegar.
 
 No hay variables secretas. `SITE_URL` es pública y se utiliza durante el build. La aplicación funciona sin ella, pero no se generan canónicas ni sitemap hasta conocer una dirección válida. El archivo `.env.example` sirve como referencia; para el build local hay que exportar la variable en el entorno del comando.
 
 ```bash
-SITE_URL=https://tu-dominio-real.vercel.app npm run build
+SITE_URL=https://the-poets-archive.vercel.app npm run build
 npm run preview
 ```
 
-Sustituir el ejemplo por el dominio real. No publicar el dominio de ejemplo.
+`SITE_URL` está configurada en Vercel para Production y Preview. Al cambiarla es necesario generar un nuevo despliegue.
 
 ## Rutas y HTML
 
@@ -24,7 +26,7 @@ El build genera `index.html`, `instrucciones.html`, `archivo.html`, `partida.htm
 
 No se debe añadir una reescritura global que envíe todas las peticiones a la portada: impediría que los rastreadores recibieran el HTML propio de cada página.
 
-## Comprobación de producción pendiente
+## Lista de comprobación de producción
 
 - Abrir inicio, reglas y archivo directamente y recargar cada ruta, tanto en ES como en EN.
 - Comprobar `lang="en-GB"`, `og:locale="en_GB"` y alternativas `hreflang` en la versión inglesa.
@@ -40,3 +42,11 @@ No se debe añadir una reescritura global que envíe todas las peticiones a la p
 ## Git y autoría
 
 Los nuevos commits se crean con nombre y correo ya utilizados por Araceli en el repositorio, mensajes en castellano y sin trailers de coautoría. El commit inicial remoto se conserva sin reescribirlo. GitHub figura como committer de ese commit inicial creado desde la plataforma; no es una segunda autoría del proyecto.
+
+## Alcance de la revisión
+
+Se han comprobado por HTTP las rutas públicas y de juego, el HTML de archivo, los metadatos, sitemap, robots y llms. En Chrome se ha abierto la web pública, iniciado una partida, respondido correctamente y guardado una obra en el cuaderno. Las 28 pruebas automatizadas completas corresponden al entorno local; no se presentan como una ejecución completa contra producción.
+
+Las rutas desconocidas devuelven HTTP 404 y `noindex`. Vercel sirve inicialmente el documento 404 español también para una URL desconocida bajo `/en/`; con JavaScript, React adapta esa pantalla al idioma de la URL. Las rutas inglesas existentes sí reciben su HTML en inglés desde el servidor.
+
+Siguen pendientes una partida completa en producción para cada modalidad, móvil real, Safari y lector de pantalla.

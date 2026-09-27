@@ -11,9 +11,9 @@
 | Tecnologías | React, react-router-dom, JavaScript, Vite y CSS |
 | Repositorio | [RTC-PROYECTO12-REACT-AVANZADO](https://github.com/AraceliFradejas/RTC-PROYECTO12-REACT-AVANZADO) |
 | Revisión local | 27 de septiembre de 2026 |
-| Web pública | Pendiente de despliegue |
+| Web pública | [The Poets Archive](https://the-poets-archive.vercel.app) |
 
-Esta memoria distingue la implementación y las comprobaciones locales de las tareas pendientes de producción. Las capturas proceden de la aplicación, no de un boceto.
+Esta memoria distingue las comprobaciones locales de la revisión del despliegue en Vercel. Las capturas proceden de la aplicación, no de un boceto.
 
 ## 1. Contexto y motivación
 
@@ -118,7 +118,7 @@ El build renderiza la misma aplicación React a HTML para que portada, reglas y 
 
 Los metadatos se definen por ruta e idioma. El build genera dieciséis páginas HTML, contando los estados vacíos y las páginas 404 de ambas versiones. Se actualizan `lang`, `og:locale` y los datos estructurados; con dominio configurado se incluyen canónicas y alternativas `hreflang`. Hay descripción, autoría, Open Graph, Twitter Card y datos estructurados WebApplication coherentes con la aplicación visible. Se excluyen de indexación partida, resultados y página 404. No se inventan valoraciones, estadísticas ni afiliaciones.
 
-`llms.txt` resume el propósito y enlaza las fuentes. Es un recurso informativo, no una garantía de posicionamiento. Las canónicas y el sitemap solo se generan cuando se proporciona `SITE_URL`, para no publicar direcciones ficticias. Queda pendiente configurar el dominio real y revisar la respuesta del alojamiento.
+`llms.txt` resume el propósito y enlaza las fuentes. Es un recurso informativo, no una garantía de posicionamiento. Las canónicas y el sitemap solo se generan cuando se proporciona `SITE_URL`, para no publicar direcciones ficticias. El dominio público es `https://the-poets-archive.vercel.app`. La revisión del alojamiento se recoge en `docs/DESPLIEGUE.md`.
 
 ## 10. Correcciones anteriores aplicadas
 

@@ -44,7 +44,7 @@ Revisión de los veinte destinos del catálogo (vídeos, canciones y pasajes), r
 - Cambio ES/EN durante una pregunta, tras revelar la respuesta y en resultados, sin perder estado.
 - Modo seleccionado, pista utilizada y plazo del reloj conservados al cambiar idioma.
 - Footer académico con enlace a The Power Tech School y aviso solo en el idioma elegido.
-- Canónicas, alternativas `hreflang` y seis URL públicas en el sitemap comprobadas con un dominio de prueba; el dominio real sigue pendiente.
+- Canónicas, alternativas `hreflang` y seis URL públicas en el sitemap: revisión local y comprobación HTTP del dominio de Vercel; alcance en [DESPLIEGUE.md](DESPLIEGUE.md).
 - Enlace de salto al contenido y foco en pregunta y revelación.
 
 ## Medición de renderizados
@@ -78,4 +78,4 @@ Las capturas se generan como JPEG a escala CSS para evitar un peso innecesario. 
 
 Se comprueba que el HTML de las páginas editoriales se sirve sin JavaScript. Los metadatos de rutas privadas incluyen `noindex`. Canónicas y sitemap dependen de configurar `SITE_URL` durante el build. `llms.txt` describe el proyecto y apunta a contenido visible; no garantiza inclusión en respuestas de asistentes.
 
-La revisión automática de accesibilidad no sustituye una auditoría manual completa. Quedan pendientes lector de pantalla, Safari, móvil real y verificación HTTP del despliegue. No se atribuyen puntuaciones Lighthouse, Core Web Vitals de campo ni posiciones SEO sin mediciones.
+La revisión automática de accesibilidad no sustituye una auditoría manual completa. Quedan pendientes lector de pantalla, Safari, móvil real y recorridos completos de juego en producción. No se atribuyen puntuaciones Lighthouse, Core Web Vitals de campo ni posiciones SEO sin mediciones.

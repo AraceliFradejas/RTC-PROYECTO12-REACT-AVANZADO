@@ -19,8 +19,8 @@
 ## Antes de entregar en el campus
 
 - Revisar personalmente el juego y su memoria para poder explicar las decisiones.
-- Configurar y verificar el despliegue web siguiendo [la guía](DESPLIEGUE.md).
-- Confirmar que GitHub continúa siendo público y que contiene los últimos commits.
+- Completar las revisiones manuales pendientes de la [web publicada](https://the-poets-archive.vercel.app), recogidas en [la guía](DESPLIEGUE.md).
+- Repositorio público y cambios subidos: comprobado el 27 de septiembre de 2026.
 - Probar el resultado en un móvil real y con Safari si está disponible.
 - Pegar el enlace de GitHub en el campo de entrega del campus. Si se modifica después de la revisión, actualizar ese campo, como indicó el profesorado.
 

@@ -6,6 +6,8 @@ Proyecto de **React avanzado** del máster **Rock The Code** de [The Power Tech 
 
 [Versión en castellano](#the-tortured-poets-challenge) · [English version](#english-version)
 
+[Jugar en la web](https://the-poets-archive.vercel.app) · [Play in English](https://the-poets-archive.vercel.app/en)
+
 [Memoria técnica](MEMORIA.md) · [Revisión del enunciado](docs/REVISION-ENTREGA.md) · [Pruebas y accesibilidad](docs/VALIDACION.md) · [Despliegue](docs/DESPLIEGUE.md)
 
 ![Portada del juego en escritorio](docs/screenshots/inicio-desktop.jpg)
@@ -29,9 +31,9 @@ La idea une música y literatura con una estética inspirada en *The Tortured Po
 
 ## Estado actual
 
-Versión ampliada, preparada y comprobada en local. Incluye tres capítulos: **Entre dos plumas**, **La obra oculta** y **El hilo de las eras**. Los dos primeros comparten diez fragmentos —cinco canciones y cinco obras de teatro—, con dos o cuatro opciones respectivamente. La cronología selecciona seis álbumes de un catálogo histórico de diez.
+Versión ampliada, publicada en Vercel y comprobada en local. Incluye tres capítulos: **Entre dos plumas**, **La obra oculta** y **El hilo de las eras**. Los dos primeros comparten diez fragmentos —cinco canciones y cinco obras de teatro—, con dos o cuatro opciones respectivamente. La cronología selecciona seis álbumes de un catálogo histórico de diez.
 
-No hay backend, cuentas ni almacenamiento persistente. El estado vive en React: se mantiene al navegar dentro de la aplicación y se pierde al recargar. La publicación web y la comprobación del dominio de producción quedan pendientes; no se presenta una demo pública que todavía no existe.
+No hay backend, cuentas ni almacenamiento persistente. El estado vive en React: se mantiene al navegar dentro de la aplicación y se pierde al recargar. Web pública: [The Poets Archive](https://the-poets-archive.vercel.app).
 
 ## Funcionalidades
 
