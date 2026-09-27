@@ -1,0 +1,15 @@
+.chapter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; border: 0; padding: 0; margin: 32px 0 24px; }
+.chapter-card { position: relative; cursor: pointer; padding: 26px; background: #f8f5ee9c; border: 1px solid var(--line); transition: transform .2s, background .2s; overflow: hidden; }
+.chapter-card:hover { transform: translateY(-4px); }
+.chapter-card.is-selected { background: #393a33; color: #f4f0e6; border-color: #393a33; }
+.chapter-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.chapter-top input { accent-color: #806e52; width: 17px; height: 17px; }
+.chapter-mark { display: block; font: 3.7rem/1.4 var(--serif); margin: 18px 0; color: #806e52; }
+.chapter-card.is-selected .chapter-mark { color: #d5c3a2; }
+.chapter-card h3 { font-size: 1.8rem; letter-spacing: -.035em; }
+.chapter-card p { font-size: .8rem; color: var(--muted); line-height: 1.7; margin-top: 12px; }
+.chapter-card .chapter-subtitle { font-family: var(--serif); font-size: 1.06rem; margin-top: 9px; color: inherit; }
+.chapter-card.is-selected p { color: #d6d2c7; }
+.chapter-tag { display: block; margin-top: 25px; padding-top: 16px; border-top: 1px solid #a69c8460; font: .58rem/1.5 'Courier New', monospace; letter-spacing: .06em; }
+@media (max-width: 900px) { .chapter-card { padding: 20px; } .chapter-card h3 { font-size: 1.5rem; } }
+@media (max-width: 700px) { .chapter-grid { grid-template-columns: 1fr; gap: 14px; } .chapter-card { padding: 23px; } .chapter-mark { float: right; margin: 10px 0 0 20px; } .chapter-card h3 { font-size: 1.8rem; margin-top: 24px; } .chapter-card p { max-width: 420px; } }

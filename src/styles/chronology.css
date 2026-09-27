@@ -1,0 +1,21 @@
+.chronology-page { max-width: 900px; margin: auto; padding: 36px 0 60px; }
+.chronology-page h1 { margin: 18px 0; }
+.chronology-page > .button { margin-top: 30px; }
+.timeline-heading { display: flex; justify-content: space-between; margin: 35px 0 15px; font: .7rem 'Courier New', monospace; }
+.era-list { list-style: none; margin: 0 0 15px; padding: 0; display: grid; gap: 12px; }
+.era-list li { display: flex; align-items: center; gap: 22px; border: 1px solid var(--line); border-left: 4px solid var(--era-colour); background: var(--paper); padding: 17px 22px; }
+.era-number { font: .75rem 'Courier New', monospace; color: var(--muted); }
+.era-disc { flex-shrink: 0; width: 57px; height: 57px; border-radius: 50%; background: repeating-radial-gradient(circle, #292a26 0 3px, #3a3a34 4px 5px); display: grid; place-items: center; }
+.era-disc > span { background: var(--era-colour); border: 2px solid #dfd1b6; width: 19px; height: 19px; border-radius: 50%; }
+.era-title h2 { font-size: 1.55rem; margin-bottom: 6px; }
+.era-title > span { font: .6rem 'Courier New', monospace; color: var(--muted); }
+.era-controls { display: flex; gap: 7px; margin-left: auto; }
+.era-controls button { width: 40px; min-height: 44px; border: 1px solid var(--line); background: transparent; color: var(--ink); }
+.era-check { margin-left: auto; color: #48623f; font-size: 1.5rem; }
+.timeline-feedback { font-size: .85rem; color: var(--accent); margin: 20px 0; min-height: 22px; }
+.timeline-complete { padding: 30px; border: 1px solid #9da58e; background: #dde3d660; margin-top: 22px; }
+.timeline-complete h2 { margin: 12px 0; }
+.timeline-complete a { display: inline-block; margin-top: 16px; font-size: .8rem; }
+.timeline-actions { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 22px; }
+.timeline-source { margin-top: 32px; color: var(--muted); }
+@media (max-width: 600px) { .era-list li { padding: 16px 12px; gap: 12px; } .era-disc { display: none; } .era-title h2 { font-size: 1.23rem; } .era-controls { flex-direction: column; } .era-controls button { width: 38px; min-height: 36px; } .timeline-heading { font-size: .59rem; } }

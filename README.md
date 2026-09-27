@@ -29,11 +29,17 @@ La idea une música y literatura con una estética inspirada en *The Tortured Po
 
 ## Estado actual
 
-Primera versión funcional, preparada y comprobada en local. Incluye diez preguntas diferentes —cinco canciones y cinco obras de teatro—, dos modos y repaso de errores. El orden cambia en cada partida; el catálogo inicial es siempre el mismo.
+Versión ampliada, preparada y comprobada en local. Incluye tres capítulos: **Entre dos plumas**, **La obra oculta** y **El hilo de las eras**. Los dos primeros comparten diez fragmentos —cinco canciones y cinco obras de teatro—, con dos o cuatro opciones respectivamente. La cronología selecciona seis álbumes de un catálogo histórico de diez.
 
 No hay backend, cuentas ni almacenamiento persistente. El estado vive en React: se mantiene al navegar dentro de la aplicación y se pierde al recargar. La publicación web y la comprobación del dominio de producción quedan pendientes; no se presenta una demo pública que todavía no existe.
 
 ## Funcionalidades
+
+- **Entre dos plumas:** reconocer la procedencia de cada fragmento.
+- **La obra oculta:** reconocer el título entre cuatro obras de la misma procedencia.
+- **El hilo de las eras:** ordenar seis álbumes mediante controles accesibles, comprobar el orden y descubrir sus años.
+- **Mi cuaderno:** hallazgos, favoritos, buscador, sellos y las últimas veinte partidas de la sesión.
+- Portada editorial con una escena original generada para el proyecto, optimizada a unos 288 KB. [Recurso y procedencia](docs/RECURSOS.md).
 
 - Modo **sin prisa**, sin límite de tiempo.
 - Modo **a contrarreloj**, con veinte segundos por fragmento.
@@ -105,7 +111,7 @@ Estas medidas facilitan el acceso al contenido. No garantizan posiciones en busc
 
 ## Aviso académico y autoría
 
-Proyecto educativo e independiente, sin afiliación, autorización ni patrocinio de Taylor Swift o sus representantes. Las obras y sus derechos pertenecen a sus respectivos titulares. Se muestran fragmentos breves con atribución; no se incorporan grabaciones, letras completas ni imágenes oficiales. La composición visual se realiza con CSS y un favicon SVG propio.
+Proyecto educativo e independiente, sin afiliación, autorización ni patrocinio de Taylor Swift o sus representantes. Las obras y sus derechos pertenecen a sus respectivos titulares. Se muestran fragmentos breves con atribución; no se incorporan grabaciones, letras completas ni imágenes oficiales. La composición combina CSS, un favicon SVG propio y una escena editorial generada para el proyecto. Su procedencia y prompt están en [Recursos](docs/RECURSOS.md).
 
 **Araceli Fradejas Muñoz** · Rock The Code · The Power Tech School.
 
@@ -120,6 +126,8 @@ Taylor Swift or Shakespeare? Read ten brief excerpts, choose their source and di
 
 ### Features and languages
 
+- Three chapters: identify the voice, identify the work from four choices, or arrange six albums chronologically.
+- A session notebook with discoveries, favourites, reading stamps and the last twenty completed games.
 - Complete Spanish and British English interfaces, with an ES/EN selector.
 - Unhurried mode or twenty seconds per question.
 - Three hints per round; 100 points per correct answer, or 50 with a hint.
@@ -127,7 +135,7 @@ Taylor Swift or Shakespeare? Read ten brief excerpts, choose their source and di
 - A results page and an untimed review of your mistakes.
 - Changing language preserves the current game, score, hints and deadline.
 
-The initial catalogue contains five songs and five plays. Their order changes between rounds. Excerpts remain in their original English. There are no accounts, recordings, complete lyrics or persistent game storage. Refreshing clears the game, whilst the language is retained by the URL.
+The initial catalogue contains five songs and five plays. Their order changes between rounds. The timeline selects six original albums from a historical catalogue of ten (2006–2024). Excerpts remain in their original English. There are no accounts, recordings, complete lyrics or persistent game storage. Refreshing clears the game, whilst the language is retained by the URL.
 
 ### Run locally
 

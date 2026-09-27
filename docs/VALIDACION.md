@@ -9,16 +9,21 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | Comprobación | Resultado |
 | --- | --- |
 | `npm run lint` | Sin errores ni avisos |
-| `npm test` | 12 pruebas de reglas, catálogo e idiomas correctas |
+| `npm test` | 17 pruebas de reglas, catálogo, idiomas, cronología y cuaderno correctas |
 | `npm run build` | Compilación y generación de HTML correctas |
-| `npm run test:e2e` | 22 casos en navegador correctos (ES/EN) |
-| axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación y resultados |
+| Pruebas de Playwright | 28 casos comprobados: suite de 26 y recorrido adicional de obras en escritorio y móvil |
+| axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación, resultados, cuaderno y cronología |
 | `npm run check:renders` | Tres cambios de segundo sin nuevos renderizados de Game ni QuestionCard |
 | Instalación de dependencias | Cero vulnerabilidades notificadas por npm tras la actualización |
 
 Los números corresponden a esta revisión. Los recursos de terceros y las dependencias pueden cambiar; no se asume que el resultado sea permanente.
 
 ## Casos funcionales
+
+- Capítulo de obras: cuatro opciones de la misma procedencia, respuesta correcta única y repaso con el mismo capítulo.
+- Cronología: ordenación con botones, cambio de idioma sin perder posiciones, finalización, sello e historial.
+- Cuaderno: descubrimiento, favorito, búsqueda, filtro de guardados, confirmación de vaciado y borrado al recargar.
+- La web de desarrollo en el puerto 5173 se ha comprobado directamente: sin errores de página ni overlay de Vite.
 
 - Diez respuestas, un error, un acierto con pista: resultado de 850 puntos.
 - Un doble clic no duplica respuesta ni puntuación.
@@ -60,6 +65,8 @@ Esta medición corresponde al paso de los segundos, no a todas las interacciones
 | Archivo | [Abrir](screenshots/archivo-desktop.jpg) | [Abrir](screenshots/archivo-mobile.jpg) |
 | Partida | [Abrir](screenshots/partida-desktop.jpg) | [Abrir](screenshots/partida-mobile.jpg) |
 | Resultados | [Abrir](screenshots/resultados-desktop.jpg) | [Abrir](screenshots/resultados-mobile.jpg) |
+| Cuaderno | [Abrir](screenshots/cuaderno-desktop.jpg) | [Abrir](screenshots/cuaderno-mobile.jpg) |
+| Cronología | [Abrir](screenshots/cronologia-desktop.jpg) | [Abrir](screenshots/cronologia-mobile.jpg) |
 
 Las capturas se generan como JPEG a escala CSS para evitar un peso innecesario. Están en la documentación y no se sirven como recursos de la aplicación. La pregunta visible puede variar porque el orden es aleatorio.
 

@@ -1,4 +1,4 @@
-export const englishPaths = { '/': '/en', '/instrucciones': '/en/how-to-play', '/archivo': '/en/archive', '/partida': '/en/game', '/resultados': '/en/results', '/404': '/en/404' };
+export const englishPaths = { '/': '/en', '/instrucciones': '/en/how-to-play', '/archivo': '/en/archive', '/partida': '/en/game', '/resultados': '/en/results', '/404': '/en/404', '/cuaderno': '/en/notebook', '/cronologia': '/en/timeline' };
 export function languageFor(path) { return /^\/en(?:\/|$)/.test(path) ? 'en' : 'es'; }
 export function basePath(path) {
   const clean = path.replace(/\/$/, '') || '/';

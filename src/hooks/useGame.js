@@ -1,14 +1,14 @@
 import { useCallback, useContext } from 'react';
 import { GameStateContext, GameDispatchContext } from '../context/GameContext';
 import { questions } from '../data/questions';
-import { shuffle } from '../game/shuffle';
+import { buildRound } from '../game/buildRound';
 
 export function useGame() {
   const state = useContext(GameStateContext);
   const dispatch = useContext(GameDispatchContext);
   if (!state || !dispatch) throw new Error('useGame necesita GameProvider');
-  const start = useCallback((mode = 'calm', pool = questions) => {
-    dispatch({ type: 'START', mode, now: Date.now(), questions: shuffle(pool).slice(0, 10) });
+  const start = useCallback((mode = 'calm', pool = questions, challenge = 'voices') => {
+    dispatch({ type: 'START', mode, now: Date.now(), challenge, questions: buildRound(pool, challenge) });
   }, [dispatch]);
   const answer = useCallback((id, author) => dispatch({ type: 'ANSWER', id, author, now: Date.now() }), [dispatch]);
   const hint = useCallback(() => dispatch({ type: 'HINT' }), [dispatch]);

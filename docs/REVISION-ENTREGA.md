@@ -12,7 +12,9 @@
 | Estado solo en React | Contextos y hooks | Sin persistencia ni base de datos |
 | Versiones ES/EN | Interfaz, pistas, explicaciones, metadatos y rutas propias | Comprobado en ambos idiomas |
 | Footer académico | Rock The Code y enlace a The Power Tech School | Visible según el idioma elegido |
-| Documentación | README y MEMORIA | Primera versión documentada |
+| Tres capítulos | Voces, obras y cronología | Recorridos comprobados en escritorio y móvil |
+| Cuaderno de lectura | Descubrimientos, favoritos, sellos e historial | Estado de sesión y vaciado comprobados |
+| Documentación | README, MEMORIA, validación y recursos | Ampliación documentada con capturas |
 
 ## Antes de entregar en el campus
 

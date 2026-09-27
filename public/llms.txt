@@ -18,3 +18,14 @@ No es un producto oficial de Taylor Swift ni está afiliado a la artista. No ofr
 - [The archive](/en/archive): works, sources and credits.
 
 An independent academic project for the Rock The Code master’s programme at The Power Tech School. The footer links to the school and displays the notice in the selected language. Game state stays in React and is cleared on refresh. Language follows the URL.
+
+## Capítulos y cuaderno
+
+Entre dos plumas: identificar la procedencia de diez fragmentos. La obra oculta: identificar la obra entre cuatro títulos de la misma procedencia. Ambos comparten el catálogo y los modos tranquilo y contrarreloj.
+
+El hilo de las eras: ordenar seis álbumes seleccionados de diez lanzamientos originales (selección histórica 2006–2024, sin regrabaciones). Se juega sin reloj y con botones accesibles. Los años aparecen al completar el orden.
+
+- [Cronología](/cronologia) / [Timeline](/en/timeline)
+- [Mi cuaderno](/cuaderno) / [My notebook](/en/notebook)
+
+El cuaderno conserva hallazgos, favoritos, sellos obtenidos por acciones reales y hasta veinte partidas terminadas. No hay persistencia: todo se pierde al recargar. La portada contiene una escena visual generada para este proyecto, no una fotografía oficial.

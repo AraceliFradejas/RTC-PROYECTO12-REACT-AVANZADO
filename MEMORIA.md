@@ -19,7 +19,7 @@ Esta memoria distingue la implementación y las comprobaciones locales de las ta
 
 El proyecto parte de mi interés por Taylor Swift y continúa la temática de la discografía del Proyecto 6. En aquella entrega trabajé canciones y álbumes mediante una API REST. Aquí el objetivo cambia: construir una experiencia de juego y practicar la gestión de estados en React.
 
-La pregunta «¿Taylor Swift o Shakespeare?» permite conectar letras contemporáneas y teatro clásico. La estética de The Tortured Poets Department da sentido al papel, la tinta y la composición editorial. El desafío se presenta dentro de The Poets Archive, una identidad propia del proyecto.
+La pregunta «¿Taylor Swift o Shakespeare?» permite conectar letras contemporáneas y teatro clásico. La estética de The Tortured Poets Department da sentido al papel, la tinta y la composición editorial. El desafío se presenta dentro de The Poets Archive, una identidad propia del proyecto. La segunda versión amplía el recorrido con tres capítulos, una cronología interactiva y un cuaderno de hallazgos.
 
 ## 2. Objetivos
 
@@ -76,6 +76,16 @@ La partida utiliza cuatro fases: `idle`, `question`, `reveal` y `finished`. Solo
 
 Acierto sin pista: 100 puntos. Con pista: 50. Error o tiempo agotado: cero. La racha crece con los aciertos y se reinicia al fallar, conservando el mejor valor. El repaso crea una partida nueva con las preguntas falladas, tres pistas y modo tranquilo.
 
+### Tres capítulos y un cuaderno
+
+`buildRound` prepara el capítulo de voces o el de obras. En el segundo genera cuatro opciones distintas de la misma procedencia e incluye exactamente una correcta. El reducer valida las respuestas contra esas opciones. El repaso mantiene el capítulo y vuelve a preparar sus alternativas.
+
+La cronología cuenta con su propio reducer: preparar selección, mover una posición, comprobar y reiniciar. Se eligen seis álbumes entre diez; no se entrega una selección ya ordenada. No hay arrastre obligatorio: los botones funcionan con ratón, teclado y móvil. Los años se muestran tras acertar. La selección se conserva al navegar y al cambiar de idioma.
+
+El cuaderno tiene estado separado de la partida. Descubrir una obra y registrar una partida son operaciones idempotentes, por lo que StrictMode o volver a resultados no los duplica. Permite guardar y quitar favoritos, buscar por obra o autor, consultar hasta veinte partidas y vaciar el contenido con confirmación. Los sellos se derivan de acciones reales. Todos los datos desaparecen al recargar.
+
+La lista de hallazgos se deriva mediante `useMemo` a partir de descubrimientos, favoritos, filtro y búsqueda. El historial puede cambiar sin repetir ese filtrado. No se almacena una segunda copia de la lista.
+
 ## 7. Temporizador y renderizados
 
 `useCountdown` mantiene los segundos únicamente dentro de `Timer`. Se utiliza una fecha límite en lugar de restar uno en cada intervalo; así se tiene en cuenta el tiempo real cuando una pestaña queda en segundo plano. El efecto limpia el intervalo y el listener de visibilidad al desmontarse.
@@ -88,7 +98,7 @@ La medición reproducible está en `npm run check:renders`; los resultados y el 
 
 ## 8. Diseño y accesibilidad
 
-La portada mezcla tipografía con serif para la lectura, monoespaciada para etiquetas y una sans serif para controles. La ilustración de papeles y sello utiliza CSS, sin descargar fotografías ni fuentes externas.
+La portada mezcla tipografía con serif para la lectura, monoespaciada para etiquetas y una sans serif para controles. La portada utiliza una escena editorial generada específicamente para el proyecto y optimizada a JPEG de unos 288 KB. No representa un lugar real ni utiliza fotografías oficiales de la artista. Los discos, sellos y el cuaderno se dibujan con CSS. No se descargan fuentes externas. [Recurso y prompt](docs/RECURSOS.md).
 
 Las opciones de modo son radios dentro de un fieldset con legend. Las respuestas son botones. Las fuentes son enlaces. Las citas se marcan como blockquote y su idioma se identifica en inglés. La jerarquía utiliza un h1 por pantalla.
 
@@ -106,7 +116,7 @@ El footer sigue la estructura académica de KelseTS Talks: autoría, referencia 
 
 El build renderiza la misma aplicación React a HTML para que portada, reglas y fuentes puedan leerse sin ejecutar JavaScript. Después React hidrata ese contenido y añade el juego. La página de partida no incluye preguntas abiertas en su HTML inicial porque no existe una sesión al solicitarla.
 
-Los metadatos se definen por ruta e idioma. El build genera doce páginas HTML, contando los estados vacíos y las páginas 404 de ambas versiones. Se actualizan `lang`, `og:locale` y los datos estructurados; con dominio configurado se incluyen canónicas y alternativas `hreflang`. Hay descripción, autoría, Open Graph, Twitter Card y datos estructurados WebApplication coherentes con la aplicación visible. Se excluyen de indexación partida, resultados y página 404. No se inventan valoraciones, estadísticas ni afiliaciones.
+Los metadatos se definen por ruta e idioma. El build genera dieciséis páginas HTML, contando los estados vacíos y las páginas 404 de ambas versiones. Se actualizan `lang`, `og:locale` y los datos estructurados; con dominio configurado se incluyen canónicas y alternativas `hreflang`. Hay descripción, autoría, Open Graph, Twitter Card y datos estructurados WebApplication coherentes con la aplicación visible. Se excluyen de indexación partida, resultados y página 404. No se inventan valoraciones, estadísticas ni afiliaciones.
 
 `llms.txt` resume el propósito y enlaza las fuentes. Es un recurso informativo, no una garantía de posicionamiento. Las canónicas y el sitemap solo se generan cuando se proporciona `SITE_URL`, para no publicar direcciones ficticias. Queda pendiente configurar el dominio real y revisar la respuesta del alojamiento.
 
@@ -115,7 +125,7 @@ Los metadatos se definen por ruta e idioma. El build genera doce páginas HTML, 
 | Observación del profesorado | Aplicación en esta entrega |
 | --- | --- |
 | Archivos vacíos o sin uso | Solo se incorporan módulos y recursos utilizados |
-| Imágenes demasiado pesadas | Composición con CSS y SVG propio; capturas fuera del bundle |
+| Imágenes demasiado pesadas | Un único JPEG optimizado y utilizado en portada; CSS y SVG para el resto, capturas fuera del bundle |
 | Falta de metadatos | Metadatos por ruta y HTML prerenderizado |
 | Poca componentización | Pregunta, opciones, reloj, revelación y resultados separados |
 | CSS demasiado extenso | Estilos distribuidos por responsabilidad |
@@ -135,7 +145,7 @@ Las pruebas cubren el doble clic, las pistas, el fin de partida, la racha, el ve
 
 ## 12. Límites y siguientes pasos
 
-El catálogo inicial tiene diez preguntas y no cambia entre rondas, salvo el orden. El juego necesita comprensión de inglés. No hay audio, historial persistente, cuentas ni clasificación global. La prueba móvil se realiza en Chromium con un viewport móvil, no en un iPhone físico ni en Safari.
+Los capítulos de voces y obras comparten diez fragmentos: cambia el orden y, en el de obras, la selección de alternativas. La cronología varía las seis piezas escogidas entre diez álbumes. El juego necesita comprensión de inglés. No hay audio, historial persistente, cuentas ni clasificación global; el historial del cuaderno solo existe durante la sesión. La prueba móvil se realiza en Chromium con un viewport móvil, no en un iPhone físico ni en Safari.
 
 La siguiente revisión debe validar el diseño y la selección de preguntas con uso real. Después se puede ampliar el catálogo con nuevas fuentes, configurar el dominio y publicar. Una futura evolución full stack tendría su alcance propio; esta entrega no introduce esa infraestructura.
 
