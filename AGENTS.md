@@ -10,3 +10,4 @@
 - Cada pregunta debe tener identificador estable, atribución correcta y fuente. No reproducir letras completas ni añadir preguntas de relleno.
 - Después de cambios funcionales ejecutar lint, pruebas de reglas, build y recorridos afectados. Actualizar la memoria únicamente con evidencias reales.
 - No presentar el proyecto como publicado, evaluado o posicionado si no se ha comprobado.
+- No enviar, reenviar ni modificar la entrega o los comentarios del campus sin confirmación explícita de Araceli para esa acción. Publicar en GitHub o Vercel no implica autorización para entregar en el campus.
