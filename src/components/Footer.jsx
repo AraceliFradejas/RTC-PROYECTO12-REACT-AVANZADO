@@ -10,6 +10,7 @@ export default function Footer() {
         <div>
           <Link className="footer-title" to="/">The Poets Archive.</Link>
           <p className="footer-tagline">{t('Para quienes sienten las palabras.')}</p>
+          <p className="footer-inspiration">{t('Hecho con cariño swiftie, inspirado en las palabras y la música de Taylor Swift.')}</p>
         </div>
         <Link className="footer-sources" to="/archivo">{t('Fuentes y créditos ↗')}</Link>
       </div>
