@@ -107,3 +107,11 @@ Lint, 18 pruebas unitarias y compilación correctos tras incorporar el arrastre.
 La prueba del reducer cubre inserción hacia delante y atrás, conservación de los álbumes, inmutabilidad, destinos inválidos y bloqueo al terminar. El arrastre no añade comprobaciones ni revela las fechas.
 
 Capturas: [escritorio](screenshots/arrastre-eras-desktop.jpg) y [perfil móvil de iPhone 13](screenshots/arrastre-eras-mobile.jpg). Los gestos táctiles son emulados; queda la comprobación del gesto en un teléfono físico.
+
+## Contador visible en el modo contrarreloj
+
+El contador anterior podía quedar por encima del área visible al desplazarse hasta las respuestas. Ahora el panel de tiempo permanece en la parte superior de la pantalla durante la pregunta, con segundos grandes, barra proporcional y aviso textual en los últimos cinco segundos. El aviso se anuncia una vez al cambiar de estado, sin leer cada segundo.
+
+Se han pasado 18 pruebas unitarias, lint y build; 20 recorridos existentes de juego e idiomas y cuatro pruebas nuevas de visibilidad y accesibilidad en escritorio y perfil iPhone 13. Se comprobaron ambos capítulos, ES/EN, conservación de los cinco segundos al cambiar idioma, retirada del reloj al responder, nueva cuenta de veinte segundos y tiempo agotado. La auditoría automática del panel no detectó infracciones.
+
+La medición sigue dando Game 1 → 1, QuestionCard 1 → 1 y Timer 1 → 4 durante tres segundos. Capturas móviles: [dos opciones](screenshots/reloj-voices-mobile.jpg) y [cuatro opciones](screenshots/reloj-works-mobile.jpg).

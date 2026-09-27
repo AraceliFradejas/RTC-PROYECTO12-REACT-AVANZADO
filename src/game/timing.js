@@ -1,0 +1,1 @@
+export const QUESTION_DURATION_MS = 20_000;

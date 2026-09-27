@@ -312,5 +312,7 @@
   "Arrastra desde ⠿ para colocar cada álbum. También puedes usar las flechas.": "Drag from ⠿ to place each album. You can also use the arrow buttons.",
   "Pulsa espacio para coger la tarjeta, usa las flechas para moverla y vuelve a pulsar espacio para soltarla. Escape cancela.": "Press Space to pick up the card, use the arrow keys to move it and press Space again to drop it. Escape cancels.",
   "{album} colocado.": "{album} placed.",
-  "El hilo de las eras propone seis álbumes al azar. Arrastra las tarjetas desde ⠿ o usa los botones de subir y bajar para ordenar los lanzamientos originales. Puedes comprobar el orden tantas veces como necesites; al acertar, se revelan los años.": "The thread of eras offers six randomly chosen albums. Drag the cards from ⠿ or use the up and down buttons to arrange the original releases. Check the order as often as you need; the years appear when you get it right."
+  "El hilo de las eras propone seis álbumes al azar. Arrastra las tarjetas desde ⠿ o usa los botones de subir y bajar para ordenar los lanzamientos originales. Puedes comprobar el orden tantas veces como necesites; al acertar, se revelan los años.": "The thread of eras offers six randomly chosen albums. Drag the cards from ⠿ or use the up and down buttons to arrange the original releases. Check the order as often as you need; the years appear when you get it right.",
+  "Tiempo restante": "Time remaining",
+  "Últimos 5 segundos": "Last 5 seconds"
 }

@@ -1,0 +1,25 @@
+.game-toolbar.game-toolbar-timed {
+  position: sticky;
+  top: max(8px, env(safe-area-inset-top));
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 16px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 4px 16px #35342f14;
+}
+.timer { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; color: var(--ink); }
+.timer-label { font-size: .8rem; }
+.timer-digits { font: bold 1.8rem/1.1 'Courier New', monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.timer-track { grid-column: 1 / -1; height: 5px; overflow: hidden; background: var(--line); }
+.timer-track > span { display: block; height: 100%; background: currentColor; transform-origin: left; transition: transform .2s linear; }
+.timer-alert { grid-column: 1 / -1; min-height: 14px; font-size: .7rem; font-weight: bold; }
+.timer-urgent { color: #8a312b; }
+.game-toolbar-timed ~ .question-card { scroll-margin-top: 150px; }
+.game-page:has(.game-toolbar-timed) :is(.answer-option, .hint-row button) { scroll-margin-top: 150px; }
+@media (max-width: 600px) {
+  .game-toolbar.game-toolbar-timed { padding: 8px 12px; }
+  .timer-digits { font-size: 1.65rem; }
+}

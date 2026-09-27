@@ -176,3 +176,7 @@ Aquí no hay un controlador `updateSong`, imágenes en Cloudinary ni operaciones
 `EraList` gestiona la interacción con [dnd-kit Sortable](https://dndkit.com/legacy/presets/sortable/overview/), y `EraCard` presenta cada álbum. El sensor de puntero se activa tras mover seis píxeles. Solo el tirador usa `touch-action: none`, para permitir el desplazamiento normal de la página desde el resto de la tarjeta. Una capa flotante acompaña el gesto y la tarjeta original marca el espacio que ocupa.
 
 Al soltar se envía `REORDER` al reducer. La inserción conserva todos los álbumes, invalida la comprobación anterior y no modifica el número de intentos. Los destinos ajenos y los movimientos en una partida terminada se ignoran. Cancelar el gesto conserva el orden inicial. Las instrucciones y los anuncios accesibles están en ES/EN.
+
+### Visibilidad del contrarreloj
+
+El tiempo restante aparece en un panel que permanece visible al bajar hasta las respuestas. Incluye número de segundos, barra proporcional y aviso de los últimos cinco segundos en ambos idiomas. `Timer` conserva su estado local y comparte la duración de cada pregunta con el reducer mediante `QUESTION_DURATION_MS`. El reloj se retira al revelar la respuesta y vuelve a veinte segundos en la siguiente pregunta. La mejora visual no añade renderizados de Game ni QuestionCard con cada segundo.

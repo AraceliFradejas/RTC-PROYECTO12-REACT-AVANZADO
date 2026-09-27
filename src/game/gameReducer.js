@@ -1,3 +1,4 @@
+import { QUESTION_DURATION_MS } from './timing';
 export const initialState = {
   phase: 'idle', challenge: 'voices', questions: [], index: 0, answers: [], mode: 'calm',
   hintsLeft: 3, hinted: false, score: 0, streak: 0, bestStreak: 0, round: 0, deadline: null,
@@ -9,7 +10,7 @@ export function gameReducer(state, action) {
       if (!action.questions?.length) return state;
       return { ...initialState, phase: 'question', questions: action.questions,
         challenge: action.challenge === 'works' ? 'works' : 'voices',
-        mode: action.mode === 'timed' ? 'timed' : 'calm', round: state.round + 1, deadline: action.now + 20000 };
+        mode: action.mode === 'timed' ? 'timed' : 'calm', round: state.round + 1, deadline: action.now + QUESTION_DURATION_MS };
     case 'HINT':
       if (state.phase !== 'question' || state.hinted || !state.hintsLeft) return state;
       return { ...state, hinted: true, hintsLeft: state.hintsLeft - 1 };
@@ -29,7 +30,7 @@ export function gameReducer(state, action) {
     case 'NEXT':
       if (state.phase !== 'reveal') return state;
       if (state.index === state.questions.length - 1) return { ...state, phase: 'finished' };
-      return { ...state, phase: 'question', index: state.index + 1, hinted: false, deadline: action.now + 20000 };
+      return { ...state, phase: 'question', index: state.index + 1, hinted: false, deadline: action.now + QUESTION_DURATION_MS };
     case 'RESET':
       return { ...initialState, round: state.round + 1 };
     default:
