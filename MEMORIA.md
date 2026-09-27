@@ -80,7 +80,7 @@ Acierto sin pista: 100 puntos. Con pista: 50. Error o tiempo agotado: cero. La r
 
 `buildRound` prepara el capítulo de voces o el de obras. En el segundo genera cuatro opciones distintas de la misma procedencia e incluye exactamente una correcta. El reducer valida las respuestas contra esas opciones. El repaso mantiene el capítulo y vuelve a preparar sus alternativas.
 
-La cronología cuenta con su propio reducer: preparar selección, mover una posición, comprobar y reiniciar. Se eligen seis álbumes entre diez; no se entrega una selección ya ordenada. No hay arrastre obligatorio: los botones funcionan con ratón, teclado y móvil. Los años se muestran tras acertar. La selección se conserva al navegar y al cambiar de idioma.
+La cronología cuenta con su propio reducer: preparar selección, mover una posición, insertar en otra posición, comprobar y reiniciar. Se eligen seis álbumes entre diez; no se entrega una selección ya ordenada. Se puede arrastrar desde el tirador de cada tarjeta con ratón o pantalla táctil. Los botones de subir y bajar siguen disponibles. Con teclado, espacio coge y suelta, las flechas desplazan y Escape cancela. Los años se muestran tras acertar. La selección se conserva al navegar y al cambiar de idioma.
 
 El cuaderno tiene estado separado de la partida. Descubrir una obra y registrar una partida son operaciones idempotentes, por lo que StrictMode o volver a resultados no los duplica. Permite guardar y quitar favoritos, buscar por obra o autor, consultar hasta veinte partidas y vaciar el contenido con confirmación. Los sellos se derivan de acciones reales. Todos los datos desaparecen al recargar.
 
@@ -170,3 +170,9 @@ Las observaciones sobre duplicación y funciones densas también sirven para est
 He separado los hallazgos, el historial y el vaciado del cuaderno en `Discoveries`, `SessionHistory` y `ClearNotebook`. La confirmación de vaciado mantiene su estado en su propio componente. También se calcula una sola vez el número de aciertos en resultados y se pasa a `ReaderPortrait`.
 
 Aquí no hay un controlador `updateSong`, imágenes en Cloudinary ni operaciones de rollback. El buscador del cuaderno usa `includes` sobre texto; no construye expresiones regulares con lo escrito por la persona, por lo que no necesita `escapeRegExp`.
+
+### Arrastre de las eras
+
+`EraList` gestiona la interacción con [dnd-kit Sortable](https://dndkit.com/legacy/presets/sortable/overview/), y `EraCard` presenta cada álbum. El sensor de puntero se activa tras mover seis píxeles. Solo el tirador usa `touch-action: none`, para permitir el desplazamiento normal de la página desde el resto de la tarjeta. Una capa flotante acompaña el gesto y la tarjeta original marca el espacio que ocupa.
+
+Al soltar se envía `REORDER` al reducer. La inserción conserva todos los álbumes, invalida la comprobación anterior y no modifica el número de intentos. Los destinos ajenos y los movimientos en una partida terminada se ignoran. Cancelar el gesto conserva el orden inicial. Las instrucciones y los anuncios accesibles están en ES/EN.

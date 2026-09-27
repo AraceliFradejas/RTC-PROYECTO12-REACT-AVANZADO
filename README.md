@@ -31,7 +31,7 @@ La idea une música y literatura con una estética inspirada en *The Tortured Po
 
 ## Estado actual
 
-Versión ampliada, publicada en Vercel y comprobada en local. Incluye tres capítulos: **Entre dos plumas**, **La obra oculta** y **El hilo de las eras**. Los dos primeros comparten diez fragmentos —cinco canciones y cinco obras de teatro—, con dos o cuatro opciones respectivamente. La cronología selecciona seis álbumes de un catálogo histórico de diez.
+Versión ampliada, publicada en Vercel y comprobada en local. Incluye tres capítulos: **Entre dos plumas**, **La obra oculta** y **El hilo de las eras**. Los dos primeros comparten diez fragmentos —cinco canciones y cinco obras de teatro—, con dos o cuatro opciones respectivamente. La cronología selecciona seis álbumes de un catálogo histórico de diez y permite ordenarlos arrastrando las tarjetas desde su tirador, con teclado o con los botones de subir y bajar.
 
 No hay backend, cuentas ni almacenamiento persistente. El estado vive en React: se mantiene al navegar dentro de la aplicación y se pierde al recargar. Web pública: [The Poets Archive](https://the-poets-archive.vercel.app).
 

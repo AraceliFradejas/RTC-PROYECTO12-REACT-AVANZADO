@@ -9,7 +9,7 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | Comprobación | Resultado |
 | --- | --- |
 | `npm run lint` | Sin errores ni avisos |
-| `npm test` | 17 pruebas de reglas, catálogo, idiomas, cronología y cuaderno correctas |
+| `npm test` | 18 pruebas de reglas, catálogo, idiomas, cronología y cuaderno correctas |
 | `npm run build` | Compilación y generación de HTML correctas |
 | Pruebas de Playwright | 30 casos correctos en local y 28 contra producción antes del ajuste móvil (ES/EN) |
 | axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación, resultados, cuaderno y cronología |
@@ -99,3 +99,11 @@ Tras revisar la web en móvil, se redujeron los espacios de las tarjetas y se co
 Se comprobó en Chromium con perfil iPhone 13: pantalla de 390 × 844 y área útil de 390 × 664 píxeles CSS. También se probaron anchuras de 320 y 700 píxeles en ES/EN. La prueba verifica que el botón esté completamente visible, que no tape la tarjeta seleccionada y que permita iniciar la cronología. No sustituye una prueba en iPhone físico.
 
 Lint, 17 pruebas unitarias, build y 30 recorridos de navegador correctos. Capturas: [selector ES](screenshots/selector-iphone13-es.jpg) y [selector EN](screenshots/selector-iphone13-en.jpg).
+
+## Arrastre de eras
+
+Lint, 18 pruebas unitarias y compilación correctos tras incorporar el arrastre. Se comprobaron los seis recorridos existentes de capítulos y dos nuevos recorridos de arrastre, en escritorio y móvil. Los nuevos casos mueven una tarjeta varias posiciones con ratón o eventos táctiles de Chromium, conservan el orden entre ES/EN, cancelan con Escape, reordenan con teclado y realizan una comprobación automática de accesibilidad sin infracciones detectadas.
+
+La prueba del reducer cubre inserción hacia delante y atrás, conservación de los álbumes, inmutabilidad, destinos inválidos y bloqueo al terminar. El arrastre no añade comprobaciones ni revela las fechas.
+
+Capturas: [escritorio](screenshots/arrastre-eras-desktop.jpg) y [perfil móvil de iPhone 13](screenshots/arrastre-eras-mobile.jpg). Los gestos táctiles son emulados; queda la comprobación del gesto en un teléfono físico.

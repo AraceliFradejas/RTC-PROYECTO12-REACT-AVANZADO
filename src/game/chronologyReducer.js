@@ -5,12 +5,16 @@ export function chronologyReducer(state, action) {
   if (action.type === 'START') return { ...chronologyInitial, phase: 'ordering', albums: action.albums, round: state.round + 1 };
   if (action.type === 'RESET') return { ...chronologyInitial, round: state.round + 1 };
   if (state.phase !== 'ordering') return state;
-  if (action.type === 'MOVE') {
+  if (action.type === 'MOVE' || action.type === 'REORDER') {
     const index = state.albums.findIndex(album => album.id === action.id);
-    const target = index + action.direction;
-    if (index < 0 || ![-1, 1].includes(action.direction) || target < 0 || target >= state.albums.length) return state;
+    const target = action.type === 'REORDER'
+      ? state.albums.findIndex(album => album.id === action.overId)
+      : index + action.direction;
+    if (index < 0 || target < 0 || target >= state.albums.length || target === index) return state;
+    if (action.type === 'MOVE' && ![-1, 1].includes(action.direction)) return state;
     const albums = [...state.albums];
-    [albums[index], albums[target]] = [albums[target], albums[index]];
+    const [album] = albums.splice(index, 1);
+    albums.splice(target, 0, album);
     return { ...state, albums, checked: false };
   }
   if (action.type === 'CHECK') {

@@ -291,7 +291,6 @@
   "CAPÍTULO I · ENTRE DOS PLUMAS": "CHAPTER I · BETWEEN TWO PENS",
   "Tres capítulos, un mismo archivo.": "Three chapters, one archive.",
   "En Entre dos plumas identificas la procedencia; en La obra oculta eliges la canción o la obra entre cuatro títulos. Ambos comparten diez fragmentos, pistas y modos de tiempo.": "In Between two pens you identify the source; in The hidden work you choose the song or play from four titles. Both share ten excerpts, hints and timing modes.",
-  "El hilo de las eras propone seis álbumes al azar. Usa los botones de subir y bajar para ordenar los lanzamientos originales. Puedes comprobar el orden tantas veces como necesites; al acertar, se revelan los años.": "The thread of eras presents six randomly selected albums. Use the up and down buttons to arrange their original releases. Check as often as you need; the years are revealed when the order is correct.",
   "El cuaderno guarda obras descubiertas, favoritos y hasta veinte partidas terminadas. Los sellos reflejan acciones reales y todo se borra al recargar. Puedes vaciarlo también desde su página.": "The notebook keeps discovered works, favourites and up to twenty completed games. Stamps reflect real actions, and everything is cleared on refresh. You can also clear it from its page.",
   "La escena de la portada es una recreación visual generada para este proyecto; no representa un lugar real ni utiliza imágenes oficiales de la artista.": "The cover scene is a visual recreation generated for this project; it does not depict a real location or use official images of the artist.",
   "Esta vez, era otra obra.": "This time, it was another work.",
@@ -304,5 +303,14 @@
   "La idea de distinguir entre Taylor Swift y Shakespeare aparece en juegos como estos. Son referencias del formato; las fuentes de nuestras preguntas están en cada obra.": "The idea of telling Taylor Swift and Shakespeare apart appears in games such as these. They are references for the format; the sources for our questions are listed with each work.",
   "Fragmentos breves en su idioma original. Las canciones enlazan a sus vídeos oficiales, Apple Music y Spotify; las obras de Shakespeare, al pasaje en Folger Shakespeare Library. Las explicaciones son comentarios del proyecto.": "Short excerpts in their original language. Songs link to their official videos, Apple Music and Spotify; Shakespeare’s works link to the passage in the Folger Shakespeare Library. The explanations are comments written for this project.",
   "Juego de React avanzado con fines educativos. Proyecto independiente, sin afiliación con Taylor Swift ni sus representantes.": "An Advanced React game for educational purposes. An independent project, not affiliated with Taylor Swift or her representatives.",
-  "Hecho con cariño swiftie, inspirado en las palabras y la música de Taylor Swift.": "Made with Swiftie love, inspired by Taylor Swift’s words and music."
+  "Hecho con cariño swiftie, inspirado en las palabras y la música de Taylor Swift.": "Made with Swiftie love, inspired by Taylor Swift’s words and music.",
+  "Tarjeta ordenable": "Sortable card",
+  "Arrastrar {album}": "Drag {album}",
+  "Has cogido {album}.": "You picked up {album}.",
+  "{album}, posición {position} de 6.": "{album}, position {position} of 6.",
+  "Movimiento cancelado.": "Move cancelled.",
+  "Arrastra desde ⠿ para colocar cada álbum. También puedes usar las flechas.": "Drag from ⠿ to place each album. You can also use the arrow buttons.",
+  "Pulsa espacio para coger la tarjeta, usa las flechas para moverla y vuelve a pulsar espacio para soltarla. Escape cancela.": "Press Space to pick up the card, use the arrow keys to move it and press Space again to drop it. Escape cancels.",
+  "{album} colocado.": "{album} placed.",
+  "El hilo de las eras propone seis álbumes al azar. Arrastra las tarjetas desde ⠿ o usa los botones de subir y bajar para ordenar los lanzamientos originales. Puedes comprobar el orden tantas veces como necesites; al acertar, se revelan los años.": "The thread of eras offers six randomly chosen albums. Drag the cards from ⠿ or use the up and down buttons to arrange the original releases. Check the order as often as you need; the years appear when you get it right."
 }

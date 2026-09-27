@@ -27,6 +27,22 @@ describe('La obra oculta', () => {
   });
 });
 describe('Cronología', () => {
+  it('inserta una era sin perder álbumes y rechaza destinos ajenos o partidas terminadas', () => {
+    const albums = eras.slice(0, 6);
+    const state = { ...chronologyInitial, phase: 'ordering', albums, checked: true, checks: 2 };
+    const moved = chronologyReducer(state, { type: 'REORDER', id: albums[0].id, overId: albums[3].id });
+    expect(moved.albums).toEqual([albums[1], albums[2], albums[3], albums[0], albums[4], albums[5]]);
+    expect(state.albums).toEqual(albums);
+    expect(moved.checked).toBe(false);
+    expect(moved.checks).toBe(2);
+    const restored = chronologyReducer(moved, { type: 'REORDER', id: albums[0].id, overId: albums[1].id });
+    expect(restored.albums).toEqual(albums);
+    for (const overId of ['no-existe', albums[0].id]) {
+      expect(chronologyReducer(state, { type: 'REORDER', id: albums[0].id, overId })).toBe(state);
+    }
+    const finished = { ...state, phase: 'finished' };
+    expect(chronologyReducer(finished, { type: 'REORDER', id: albums[0].id, overId: albums[3].id })).toBe(finished);
+  });
   it('mueve sin perder álbumes, limita los extremos y termina en el orden correcto', () => {
     const pair = eras.slice(0, 2).reverse();
     let state = chronologyReducer(chronologyInitial, { type: 'START', albums: pair });
