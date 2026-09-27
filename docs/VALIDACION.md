@@ -115,3 +115,9 @@ El contador anterior podía quedar por encima del área visible al desplazarse h
 Se han pasado 18 pruebas unitarias, lint y build; 20 recorridos existentes de juego e idiomas y cuatro pruebas nuevas de visibilidad y accesibilidad en escritorio y perfil iPhone 13. Se comprobaron ambos capítulos, ES/EN, conservación de los cinco segundos al cambiar idioma, retirada del reloj al responder, nueva cuenta de veinte segundos y tiempo agotado. La auditoría automática del panel no detectó infracciones.
 
 La medición sigue dando Game 1 → 1, QuestionCard 1 → 1 y Timer 1 → 4 durante tres segundos. Capturas móviles: [dos opciones](screenshots/reloj-voices-mobile.jpg) y [cuatro opciones](screenshots/reloj-works-mobile.jpg).
+
+## Conservación de puntuación durante la sesión
+
+Comprobado contra producción en escritorio y perfil iPhone 13: tras acertar la primera pregunta se conservan los 100 puntos, el fragmento 2 y su texto al visitar instrucciones, archivo y cuaderno, volver al inicio y retomar la partida. El cambio a inglés mantiene la misma puntuación y pregunta. Recargar deja la sesión vacía, conforme al almacenamiento solo en React. Dos pruebas nuevas correctas.
+
+Los contextos permanecen por encima de las rutas. No se han añadido cookies, caché ni almacenamiento persistente. Abandonar la partida reinicia el marcador; empezar otra sustituye la actual. Los resultados de partidas terminadas se registran en el cuaderno de la sesión.
