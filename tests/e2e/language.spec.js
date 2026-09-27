@@ -69,11 +69,11 @@ test('rutas inglesas, footer académico, metadatos y accesibilidad', async ({ pa
   await expect(page.locator('footer')).toContainText('Proyecto académico del máster Rock The Code de');
 });
 
-test('las páginas en inglés se sirven sin JavaScript', async ({ browser }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+test('las páginas en inglés se sirven sin JavaScript', async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
   const page = await context.newPage();
   for (const path of ['/en', '/en/how-to-play', '/en/archive']) {
-    await page.goto(`http://127.0.0.1:4173${path}`);
+    await page.goto(path);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en-GB');
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.locator('footer')).toContainText('Rock The Code master’s programme');

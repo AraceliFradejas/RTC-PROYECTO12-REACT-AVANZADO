@@ -77,10 +77,10 @@ test('rutas públicas, metadatos, teclado y anchura', async ({ page }) => {
     if (path === '/no-existe') await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,follow');
   }
 });
-test('el contenido editorial llega en HTML sin JavaScript', async ({ browser }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+test('el contenido editorial llega en HTML sin JavaScript', async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
   const page = await context.newPage();
-  await page.goto('http://127.0.0.1:4173/archivo');
+  await page.goto('/archivo');
   await expect(page.getByRole('heading', { name: 'La música también se lee.' })).toBeVisible();
   await expect(page.locator('.source-list li')).toHaveCount(10);
   await context.close();

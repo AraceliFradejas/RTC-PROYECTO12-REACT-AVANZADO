@@ -45,8 +45,8 @@ Los nuevos commits se crean con nombre y correo ya utilizados por Araceli en el 
 
 ## Alcance de la revisión
 
-Se han comprobado por HTTP las rutas públicas y de juego, el HTML de archivo, los metadatos, sitemap, robots y llms. En Chrome se ha abierto la web pública, iniciado una partida, respondido correctamente y guardado una obra en el cuaderno. Las 28 pruebas automatizadas completas corresponden al entorno local; no se presentan como una ejecución completa contra producción.
+Se han comprobado por HTTP las rutas públicas y de juego, el HTML de archivo, los metadatos, sitemap, robots y llms. En Chrome se ha abierto la web pública, iniciado una partida, respondido correctamente y guardado una obra en el cuaderno. También se ejecutaron las 28 pruebas automatizadas contra el dominio público, todas correctas, incluyendo los tres capítulos y ambos idiomas. La variable `PLAYWRIGHT_BASE_URL` permite repetir esta comprobación sin iniciar un servidor local.
 
 Las rutas desconocidas devuelven HTTP 404 y `noindex`. Vercel sirve inicialmente el documento 404 español también para una URL desconocida bajo `/en/`; con JavaScript, React adapta esa pantalla al idioma de la URL. Las rutas inglesas existentes sí reciben su HTML en inglés desde el servidor.
 
-Siguen pendientes una partida completa en producción para cada modalidad, móvil real, Safari y lector de pantalla.
+Safari de macOS pasó un recorrido manual de cambio de idioma, respuesta, favorito y reinicio al recargar. El alcance exacto figura en [VALIDACION.md](VALIDACION.md). Siguen pendientes móvil físico y auditoría con lector de pantalla.

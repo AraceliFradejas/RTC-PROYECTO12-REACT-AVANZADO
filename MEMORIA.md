@@ -33,7 +33,7 @@ El objetivo técnico es separar las reglas de la presentación y entender qué p
 | --- | --- | --- |
 | Responsive | Grid, Flex, tamaños fluidos y media queries en los estilos que corresponden | Capturas y pruebas en escritorio y móvil |
 | CSS y HTML | Variables, estilos por responsabilidad, landmarks, encabezados y controles nativos | Lint y revisión con axe |
-| react-router-dom | Seis recorridos, contando ruta desconocida | Acceso directo, navegación y recarga |
+| react-router-dom | Siete páginas por idioma y una ruta de página desconocida | Acceso directo, navegación y recarga |
 | Custom hook | useGame, useCountdown y useFocus | Partida, reloj y movimientos de foco |
 | useReducer | Transiciones START, HINT, ANSWER, NEXT y RESET | Pruebas de reglas y casos límite |
 | Evitar renderizados innecesarios | Reloj con estado local, callbacks estables y tarjeta memorizada | Medición específica del reloj |
@@ -45,7 +45,7 @@ No se promete que ningún componente vuelva a renderizarse: las respuestas y las
 
 React compone la interfaz y react-router-dom conserva la navegación de la aplicación. Vite prepara el desarrollo y la compilación. El CSS se divide en base, layout, portada, juego y páginas de lectura. No hay archivos vacíos ni versiones móvil/escritorio desconectadas.
 
-React Hook Form se ha consultado como recurso. El formulario actual contiene dos opciones de modo y un botón; los controles nativos y un estado local son suficientes. No se instala una dependencia que no se necesita.
+React Hook Form se ha consultado como recurso. El formulario actual permite elegir entre tres capítulos y dos modos de partida, con un botón para comenzar; los controles nativos y un estado local son suficientes. No se instala una dependencia que no se necesita.
 
 Vitest prueba las reglas sin navegador. Playwright recorre la aplicación compilada. axe-core detecta incidencias automáticas de accesibilidad. Esas pruebas no sustituyen una evaluación con personas usuarias o tecnologías de apoyo.
 

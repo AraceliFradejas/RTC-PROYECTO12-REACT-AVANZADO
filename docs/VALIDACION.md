@@ -1,4 +1,4 @@
-# Validación local · 27 de septiembre de 2026
+# Validación local y de producción · 27 de septiembre de 2026
 
 ## Entorno y alcance
 
@@ -11,7 +11,7 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | `npm run lint` | Sin errores ni avisos |
 | `npm test` | 17 pruebas de reglas, catálogo, idiomas, cronología y cuaderno correctas |
 | `npm run build` | Compilación y generación de HTML correctas |
-| Pruebas de Playwright | 28 casos en navegador correctos (ES/EN) |
+| Pruebas de Playwright | 28 casos correctos en local y 28 contra producción (ES/EN) |
 | axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación, resultados, cuaderno y cronología |
 | `npm run check:renders` | Tres cambios de segundo sin nuevos renderizados de Game ni QuestionCard |
 | Instalación de dependencias | Cero vulnerabilidades notificadas por npm tras la actualización |
@@ -72,10 +72,22 @@ Esta medición corresponde al paso de los segundos, no a todas las interacciones
 | Cuaderno | [Abrir](screenshots/cuaderno-desktop.jpg) | [Abrir](screenshots/cuaderno-mobile.jpg) |
 | Cronología | [Abrir](screenshots/cronologia-desktop.jpg) | [Abrir](screenshots/cronologia-mobile.jpg) |
 
-Las capturas se generan como JPEG a escala CSS para evitar un peso innecesario. Están en la documentación y no se sirven como recursos de la aplicación. La pregunta visible puede variar porque el orden es aleatorio.
+Las capturas de esta revisión proceden de la ejecución contra producción. Se generan como JPEG a escala CSS para evitar un peso innecesario. Están en la documentación y no se sirven como recursos de la aplicación. La pregunta visible puede variar porque el orden es aleatorio.
 
 ## SEO, GEO y límites
 
 Se comprueba que el HTML de las páginas editoriales se sirve sin JavaScript. Los metadatos de rutas privadas incluyen `noindex`. Canónicas y sitemap dependen de configurar `SITE_URL` durante el build. `llms.txt` describe el proyecto y apunta a contenido visible; no garantiza inclusión en respuestas de asistentes.
 
-La revisión automática de accesibilidad no sustituye una auditoría manual completa. Quedan pendientes lector de pantalla, Safari, móvil real y recorridos completos de juego en producción. No se atribuyen puntuaciones Lighthouse, Core Web Vitals de campo ni posiciones SEO sin mediciones.
+La revisión automática de accesibilidad no sustituye una auditoría manual completa. Quedan pendientes una auditoría con lector de pantalla y una revisión en móvil físico. No se atribuyen puntuaciones Lighthouse, Core Web Vitals de campo ni posiciones SEO sin mediciones.
+
+## Comprobación de la web publicada
+
+El 27 de septiembre de 2026 se ejecutó la misma suite contra el dominio público:
+
+```bash
+PLAYWRIGHT_BASE_URL=https://the-poets-archive.vercel.app npm run test:e2e
+```
+
+Resultado: 28 pruebas correctas en 12,4 segundos. Incluye partidas completas de los tres capítulos, repaso, temporizador, cuaderno, navegación ES/EN, HTML sin JavaScript y accesibilidad automática. Los perfiles de escritorio y móvil utilizan Chromium.
+
+En Safari de macOS se comprobó manualmente portada, cambio a inglés británico, inicio de La obra oculta, respuesta correcta con 100 puntos, guardado de Hamlet en el cuaderno, regreso al castellano conservando el favorito y recarga con sesión vacía. Se revisó visualmente el cuaderno. Este recorrido breve no equivale a ejecutar toda la suite en Safari.
