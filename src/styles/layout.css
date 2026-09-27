@@ -7,12 +7,6 @@
 .site-header nav a { text-decoration: none; color: var(--muted); padding: .9rem 0; font-size: .77rem; border-bottom: 1px solid transparent; }
 .site-header nav a.active { color: var(--ink); border-color: var(--ink); }
 main { min-height: calc(100vh - 290px); }
-.site-footer { display: block; min-height: 150px; padding-block: 2rem; border-top: 1px solid var(--line); }
-.footer-title { font-family: var(--serif); font-style: italic; font-size: 1.4rem; text-decoration: none; }
-.site-footer p, .site-footer > a, .footer-credit { font-size: .68rem; line-height: 1.7; }
-.site-footer p { margin-top: 5px; color: var(--muted); }
-.footer-credit { text-align: center; display: grid; gap: .5rem; }
-.footer-credit small { font-size: .62rem; color: var(--muted); }
 .empty-state { text-align: center; padding: 110px 20px; }
 .empty-state h1 { font-size: clamp(2.4rem, 4vw, 4rem); margin: 1.5rem auto; max-width: 780px; }
 .empty-state p { max-width: 560px; margin: 0 auto 2rem; }
@@ -24,18 +18,12 @@ main { min-height: calc(100vh - 290px); }
   .brand { font-size: .56rem; }
   .site-header nav { width: 100%; justify-content: space-around; gap: 1rem; }
   .site-header nav a { font-size: .73rem; padding: .6rem 0; }
-  .footer-credit { text-align: left; }
 }
 .language-switcher { display: flex; gap: 3px; border: 1px solid var(--line); padding: 3px; }
 .language-switcher a { display: grid; place-items: center; min-width: 40px; min-height: 36px; font-size: .72rem; text-decoration: none; }
 .language-switcher a[aria-current] { background: var(--ink); color: var(--paper); }
-.footer-main { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.footer-main > a { font-size: .72rem; }
-.footer-academic { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
-.footer-academic p { max-width: 960px; font-size: .72rem; color: var(--muted); }
 @media (max-width: 600px) {
   .site-header { justify-content: space-between; }
   .site-header nav { order: 3; }
   .language-switcher a { min-width: 36px; min-height: 34px; }
-  .footer-main { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
 }
