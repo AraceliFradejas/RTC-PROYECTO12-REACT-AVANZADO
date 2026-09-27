@@ -9,7 +9,7 @@ export default function ChallengePicker({ value, onChange }) {
   return <fieldset className="chapter-grid"><legend className="sr-only">{t('Elige un desafío')}</legend>
     {chapters.map(chapter => <label className={`chapter-card ${value === chapter.id ? 'is-selected' : ''}`} key={chapter.id}>
       <div className="chapter-top"><span className="eyebrow">{t('CAPÍTULO')} {chapter.number}</span><input type="radio" name="challenge" value={chapter.id} checked={value === chapter.id} onChange={() => onChange(chapter.id)}/></div>
-      <span className="chapter-mark" aria-hidden="true">{chapter.mark}</span><h3>{t(chapter.title)}</h3><p className="chapter-subtitle">{t(chapter.subtitle)}</p><p>{t(chapter.description)}</p><span className="chapter-tag">{t(chapter.tag)}</span>
+      <span className="chapter-mark" aria-hidden="true">{chapter.mark}</span><h3>{t(chapter.title)}</h3><p className="chapter-subtitle">{t(chapter.subtitle)}</p><p className="chapter-description">{t(chapter.description)}</p><span className="chapter-tag">{t(chapter.tag)}</span>
     </label>)}
   </fieldset>;
 }

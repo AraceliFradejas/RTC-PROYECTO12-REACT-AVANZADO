@@ -12,4 +12,14 @@
 .chapter-card.is-selected p { color: #d6d2c7; }
 .chapter-tag { display: block; margin-top: 25px; padding-top: 16px; border-top: 1px solid #a69c8460; font: .58rem/1.5 'Courier New', monospace; letter-spacing: .06em; }
 @media (max-width: 900px) { .chapter-card { padding: 20px; } .chapter-card h3 { font-size: 1.5rem; } }
-@media (max-width: 700px) { .chapter-grid { grid-template-columns: 1fr; gap: 14px; } .chapter-card { padding: 23px; } .chapter-mark { float: right; margin: 10px 0 0 20px; } .chapter-card h3 { font-size: 1.8rem; margin-top: 24px; } .chapter-card p { max-width: 420px; } }
+@media (max-width: 700px) {
+  .chapter-grid { grid-template-columns: 1fr; gap: 8px; margin: 20px 0 16px; }
+  .chapter-card { padding: 12px 16px; scroll-margin-block: 16px 120px; }
+  .chapter-card:hover { transform: none; }
+  .chapter-mark { display: none; }
+  .chapter-card h3 { font-size: 1.35rem; margin-top: 3px; }
+  .chapter-card .chapter-subtitle { font-size: .9rem; margin-top: 2px; }
+  .chapter-tag { margin-top: 6px; padding-top: 0; border: 0; }
+  /* El resumen visible basta en móvil; la descripción sigue accesible al lector de pantalla. */
+  .chapter-description { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}

@@ -11,7 +11,7 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | `npm run lint` | Sin errores ni avisos |
 | `npm test` | 17 pruebas de reglas, catálogo, idiomas, cronología y cuaderno correctas |
 | `npm run build` | Compilación y generación de HTML correctas |
-| Pruebas de Playwright | 28 casos correctos en local y 28 contra producción (ES/EN) |
+| Pruebas de Playwright | 30 casos correctos en local y 28 contra producción antes del ajuste móvil (ES/EN) |
 | axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación, resultados, cuaderno y cronología |
 | `npm run check:renders` | Tres cambios de segundo sin nuevos renderizados de Game ni QuestionCard |
 | Instalación de dependencias | Cero vulnerabilidades notificadas por npm tras la actualización |
@@ -72,7 +72,7 @@ Esta medición corresponde al paso de los segundos, no a todas las interacciones
 | Cuaderno | [Abrir](screenshots/cuaderno-desktop.jpg) | [Abrir](screenshots/cuaderno-mobile.jpg) |
 | Cronología | [Abrir](screenshots/cronologia-desktop.jpg) | [Abrir](screenshots/cronologia-mobile.jpg) |
 
-Las capturas de esta revisión proceden de la ejecución contra producción. Se generan como JPEG a escala CSS para evitar un peso innecesario. Están en la documentación y no se sirven como recursos de la aplicación. La pregunta visible puede variar porque el orden es aleatorio.
+Las capturas se han actualizado contra la compilación local al revisar el ajuste móvil. Se generan como JPEG a escala CSS para evitar un peso innecesario. Están en la documentación y no se sirven como recursos de la aplicación. La pregunta visible puede variar porque el orden es aleatorio.
 
 ## SEO, GEO y límites
 
@@ -91,3 +91,11 @@ PLAYWRIGHT_BASE_URL=https://the-poets-archive.vercel.app npm run test:e2e
 Resultado: 28 pruebas correctas en 12,4 segundos. Incluye partidas completas de los tres capítulos, repaso, temporizador, cuaderno, navegación ES/EN, HTML sin JavaScript y accesibilidad automática. Los perfiles de escritorio y móvil utilizan Chromium.
 
 En Safari de macOS se comprobó manualmente portada, cambio a inglés británico, inicio de La obra oculta, respuesta correcta con 100 puntos, guardado de Hamlet en el cuaderno, regreso al castellano conservando el favorito y recarga con sesión vacía. Se revisó visualmente el cuaderno. Este recorrido breve no equivale a ejecutar toda la suite en Safari.
+
+## Ajuste del selector para iPhone 13
+
+Tras revisar la web en móvil, se redujeron los espacios de las tarjetas y se conservaron a la vista título, resumen y tipo de desafío. Las descripciones ampliadas siguen disponibles para lectores de pantalla. El botón de comenzar permanece visible dentro del selector mediante `position: sticky`, con espacio para el área segura inferior.
+
+Se comprobó en Chromium con perfil iPhone 13: pantalla de 390 × 844 y área útil de 390 × 664 píxeles CSS. También se probaron anchuras de 320 y 700 píxeles en ES/EN. La prueba verifica que el botón esté completamente visible, que no tape la tarjeta seleccionada y que permita iniciar la cronología. No sustituye una prueba en iPhone físico.
+
+Lint, 17 pruebas unitarias, build y 30 recorridos de navegador correctos. Capturas: [selector ES](screenshots/selector-iphone13-es.jpg) y [selector EN](screenshots/selector-iphone13-en.jpg).
