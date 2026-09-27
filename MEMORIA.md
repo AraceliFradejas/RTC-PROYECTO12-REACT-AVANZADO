@@ -156,3 +156,9 @@ Las fuentes de cada pregunta aparecen en `src/data/questions.js` y en la página
 Referencias técnicas: [useReducer](https://react.dev/reference/react/useReducer), [React Router](https://reactrouter.com/start/declarative/installation) y [React Hook Form](https://www.react-hook-form.com/).
 
 **Araceli Fradejas Muñoz** · Rock The Code · The Power Tech School.
+
+## Revisión de enlaces
+
+He revisado las referencias para que se pueda continuar desde el juego hasta la obra. Las canciones tienen enlaces directos a Apple Music y Spotify, además de su vídeo oficial con letra. En el Proyecto 6 utilizaba búsquedas por título; aquí el catálogo pequeño permite guardar la URL de cada pista. Para Shakespeare, el enlace abre la escena de Folger en la línea del fragmento.
+
+El componente `WorkLinks` comparte estas opciones entre archivo, revelación, resultados y cuaderno. JetPunk y TriviaCreator figuran como referencias del formato, separadas de las fuentes de las preguntas. La comprobación y sus límites están en [la revisión de enlaces](docs/ENLACES.md).

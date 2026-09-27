@@ -21,7 +21,6 @@
 .discovery-card { padding: 25px; border: 1px solid var(--line); background: #f8f5ee; display: flex; flex-direction: column; align-items: flex-start; }
 .discovery-card h3 { margin: 15px 0; font-size: 1.7rem; }
 .discovery-card p { font-size: .8rem; flex: 1; margin-bottom: 22px; }
-.discovery-card > a { font-size: .74rem; margin-top: 16px; }
 .notebook-empty { padding: 40px; text-align: center; border: 1px dashed var(--line); }
 .notebook-empty > span { font-size: 2.7rem; color: #9b8c70; }
 .notebook-empty h3 { margin: 12px 0; }

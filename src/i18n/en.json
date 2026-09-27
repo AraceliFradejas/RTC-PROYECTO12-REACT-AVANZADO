@@ -96,7 +96,6 @@
   ". La composición gráfica y los textos de acompañamiento se han creado para este juego.": ". The graphic composition and accompanying text were created for this game.",
   "Visitar el proyecto de discografía ↗": "Visit the discography project ↗",
   "Las obras del archivo": "The works in the archive",
-  "Fragmentos breves en su idioma original. Cada referencia enlaza con un recurso oficial de la artista o con Folger Shakespeare Library. Las explicaciones son comentarios del proyecto.": "Brief excerpts in their original language. Each reference links to an official artist resource or to the Folger Shakespeare Library. The explanations are commentary written for this project.",
   "Aquí puedes ver las respuestas. Si prefieres descubrirlas jugando, vuelve después de tu primera ronda.": "The answers are listed here. If you would rather discover them as you play, return after your first round.",
   "Fuente ↗": "Source ↗",
   "Un proyecto personal y educativo": "A personal, educational project",
@@ -300,5 +299,11 @@
   "La escena de la portada es una recreación visual generada para este proyecto; no representa un lugar real ni utiliza imágenes oficiales de la artista.": "The cover scene is a visual recreation generated for this project; it does not depict a real location or use official images of the artist.",
   "Esta vez, era otra obra.": "This time, it was another work.",
   "1 guardada": "1 saved",
-  "Mis sellos de lectura": "My reading stamps"
+  "Mis sellos de lectura": "My reading stamps",
+  "Vídeo con letra": "Lyric video",
+  "Leer el pasaje": "Read the passage",
+  "{resource}: {work} (se abre en otra pestaña)": "{resource}: {work} (opens in a new tab)",
+  "Referencias del formato": "Inspiration for the format",
+  "La idea de distinguir entre Taylor Swift y Shakespeare aparece en juegos como estos. Son referencias del formato; las fuentes de nuestras preguntas están en cada obra.": "The idea of telling Taylor Swift and Shakespeare apart appears in games such as these. They are references for the format; the sources for our questions are listed with each work.",
+  "Fragmentos breves en su idioma original. Las canciones enlazan a sus vídeos oficiales, Apple Music y Spotify; las obras de Shakespeare, al pasaje en Folger Shakespeare Library. Las explicaciones son comentarios del proyecto.": "Short excerpts in their original language. Songs link to their official videos, Apple Music and Spotify; Shakespeare’s works link to the passage in the Folger Shakespeare Library. The explanations are comments written for this project."
 }

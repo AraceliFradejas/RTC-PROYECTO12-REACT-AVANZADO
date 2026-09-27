@@ -1,0 +1,8 @@
+.work-links { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; }
+.work-links a { font-size: .75rem; padding-block: 10px; text-underline-offset: 4px; }
+.source-list .work-links { flex: 0 1 260px; justify-content: flex-end; }
+.discovery-card .work-links { margin-top: 16px; }
+@media (max-width: 600px) {
+  .source-list li { align-items: flex-start; flex-direction: column; }
+  .source-list .work-links { flex-basis: auto; justify-content: flex-start; }
+}

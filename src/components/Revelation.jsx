@@ -1,3 +1,4 @@
+import WorkLinks from './WorkLinks';
 import { useEffect } from 'react';
 import { useNotebookActions } from '../context/NotebookContext';
 import SaveButton from './notebook/SaveButton';
@@ -14,7 +15,7 @@ export default function Revelation({ question, answer, onNext, last }) {
       <h2 id="reveal-heading" ref={heading} tabIndex={-1}>{answer.correct ? t("Has acertado.") : answer.author === null ? t("Se acabó el tiempo.") : t(question.choices ? 'Esta vez, era otra obra.' : 'Esta vez, era otra pluma.')}</h2>
       <p><strong>{authorNames[question.author]}</strong> · <cite>{question.work}</cite></p>
       <p>{t(question.explanation)}</p><p className="credits">{t(question.credits)}</p>
-      <a href={question.source} target="_blank" rel="noreferrer">{t("Consultar la fuente ")}<span aria-hidden="true">↗</span></a>
+      <WorkLinks question={question}/>
     </div><SaveButton id={question.id}/><button className="button" onClick={onNext}>{last ? t("Leer mi resultado") : t("Siguiente fragmento")} <span aria-hidden="true">→</span></button>
   </section>;
 }

@@ -11,12 +11,16 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | `npm run lint` | Sin errores ni avisos |
 | `npm test` | 17 pruebas de reglas, catálogo, idiomas, cronología y cuaderno correctas |
 | `npm run build` | Compilación y generación de HTML correctas |
-| Pruebas de Playwright | 28 casos comprobados: suite de 26 y recorrido adicional de obras en escritorio y móvil |
+| Pruebas de Playwright | 28 casos en navegador correctos (ES/EN) |
 | axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación, resultados, cuaderno y cronología |
 | `npm run check:renders` | Tres cambios de segundo sin nuevos renderizados de Game ni QuestionCard |
 | Instalación de dependencias | Cero vulnerabilidades notificadas por npm tras la actualización |
 
 Los números corresponden a esta revisión. Los recursos de terceros y las dependencias pueden cambiar; no se asume que el resultado sea permanente.
+
+## Enlaces externos
+
+Revisión de los veinte destinos del catálogo (vídeos, canciones y pasajes), referencias del formato, archivo de eras, escuela y GitHub. Evidencias y límites en [ENLACES.md](ENLACES.md).
 
 ## Casos funcionales
 
