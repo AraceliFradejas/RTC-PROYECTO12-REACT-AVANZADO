@@ -2,7 +2,7 @@
 .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .footer-title { font: italic 1.5rem var(--serif); text-decoration: none; }
 .footer-tagline { margin-top: 8px; color: var(--muted); font-size: .78rem; line-height: 1.6; }
-.footer-inspiration { max-width: 440px; margin-top: 6px; color: var(--muted); font: italic .85rem/1.6 var(--serif); }
+.footer-academic .footer-inspiration { margin-top: 6px; color: var(--muted); font: italic .85rem/1.6 var(--serif); }
 .footer-sources { padding-block: 12px; font-size: .78rem; }
 .footer-details { display: grid; grid-template-columns: 1fr 2fr; gap: 24px 48px; margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
 .footer-details p { font-size: .75rem; line-height: 1.8; }
