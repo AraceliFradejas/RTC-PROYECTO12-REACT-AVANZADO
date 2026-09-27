@@ -1,3 +1,5 @@
+import { isChronologicalOrder } from './isChronologicalOrder';
+
 export const chronologyInitial = { phase: 'idle', albums: [], checks: 0, round: 0 };
 export function chronologyReducer(state, action) {
   if (action.type === 'START') return { ...chronologyInitial, phase: 'ordering', albums: action.albums, round: state.round + 1 };
@@ -12,7 +14,7 @@ export function chronologyReducer(state, action) {
     return { ...state, albums, checked: false };
   }
   if (action.type === 'CHECK') {
-    const complete = state.albums.every((album, index, list) => !index || list[index - 1].year < album.year);
+    const complete = isChronologicalOrder(state.albums);
     return { ...state, checks: state.checks + 1, checked: true, phase: complete ? 'finished' : 'ordering' };
   }
   return state;

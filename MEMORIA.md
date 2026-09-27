@@ -162,3 +162,11 @@ Referencias técnicas: [useReducer](https://react.dev/reference/react/useReducer
 He revisado las referencias para que se pueda continuar desde el juego hasta la obra. Las canciones tienen enlaces directos a Apple Music y Spotify, además de su vídeo oficial con letra. En el Proyecto 6 utilizaba búsquedas por título; aquí el catálogo pequeño permite guardar la URL de cada pista. Para Shakespeare, el enlace abre la escena de Folger en la línea del fragmento.
 
 El componente `WorkLinks` comparte estas opciones entre archivo, revelación, resultados y cuaderno. JetPunk y TriviaCreator figuran como referencias del formato, separadas de las fuentes de las preguntas. La comprobación y sus límites están en [la revisión de enlaces](docs/ENLACES.md).
+
+## Mantenimiento a partir de la revisión del Proyecto 8
+
+Las observaciones sobre duplicación y funciones densas también sirven para este proyecto. La regla que comprueba si los álbumes están ordenados se repetía al preparar la cronología y al corregirla; ahora ambas partes utilizan `isChronologicalOrder`, dentro de `src/game` porque es una regla del juego.
+
+He separado los hallazgos, el historial y el vaciado del cuaderno en `Discoveries`, `SessionHistory` y `ClearNotebook`. La confirmación de vaciado mantiene su estado en su propio componente. También se calcula una sola vez el número de aciertos en resultados y se pasa a `ReaderPortrait`.
+
+Aquí no hay un controlador `updateSong`, imágenes en Cloudinary ni operaciones de rollback. El buscador del cuaderno usa `includes` sobre texto; no construye expresiones regulares con lo escrito por la persona, por lo que no necesita `escapeRegExp`.

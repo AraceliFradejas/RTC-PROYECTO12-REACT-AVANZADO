@@ -5,6 +5,8 @@
 - Esta entrega utiliza estado en React, sin localStorage, sessionStorage, cookies de partidas ni bases de datos.
 - Conservar `react-router-dom`, el reducer y los hooks propios. Mantener aisladas las actualizaciones del temporizador.
 - Separar componentes, reglas, datos y estilos. No incorporar archivos vacíos, recursos pesados sin uso ni preguntas duplicadas.
+- Mantener cada regla compartida en un solo módulo, cerca de su dominio, e importarla donde se utilice. Evitar copias de helpers y cálculos de resultados duplicados.
+- Separar los bloques de interfaz con responsabilidad propia y escribir el JSX con saltos de línea legibles; no comprimir una página en pocas líneas para aparentar que es pequeña.
 - Cada pregunta debe tener identificador estable, atribución correcta y fuente. No reproducir letras completas ni añadir preguntas de relleno.
 - Después de cambios funcionales ejecutar lint, pruebas de reglas, build y recorridos afectados. Actualizar la memoria únicamente con evidencias reales.
 - No presentar el proyecto como publicado, evaluado o posicionado si no se ha comprobado.

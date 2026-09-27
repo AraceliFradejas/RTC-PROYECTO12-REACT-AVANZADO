@@ -2,10 +2,9 @@ import { useEffect } from 'react';
 import { useNotebookActions } from '../context/NotebookContext';
 import { useLanguage } from '../context/LanguageContext';
 import { LocalLink as Link } from './LocalLink';
-export default function ReaderPortrait({ state }) {
+export default function ReaderPortrait({ state, correct }) {
   const { t } = useLanguage();
   const dispatch = useNotebookActions();
-  const correct = state.answers.filter(answer => answer.correct).length;
   const accuracy = Math.round(correct / state.questions.length * 100);
   const title = accuracy === 100 ? 'Una lectura impecable' : accuracy >= 70 ? 'Una mirada afinada' : 'Una curiosidad que crece';
   useEffect(() => {
