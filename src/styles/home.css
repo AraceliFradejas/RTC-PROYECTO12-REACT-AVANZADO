@@ -61,5 +61,4 @@
   .entry-actions .text-link { text-align: center; }
   .home-notes { grid-template-columns: 1fr; gap: 24px; padding-block: 30px; }
   .home-notes > div { border: 0; padding: 0; }
-  .home-notes p br { display: none; }
 }

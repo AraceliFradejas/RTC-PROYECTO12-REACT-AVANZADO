@@ -9,9 +9,9 @@ Node.js 22.23.2, Chrome en macOS, aplicación compilada con Vite. Las pruebas de
 | Comprobación | Resultado |
 | --- | --- |
 | `npm run lint` | Sin errores ni avisos |
-| `npm test` | 10 pruebas de reglas y catálogo correctas |
+| `npm test` | 12 pruebas de reglas, catálogo e idiomas correctas |
 | `npm run build` | Compilación y generación de HTML correctas |
-| `npm run test:e2e` | 14 casos en navegador correctos |
+| `npm run test:e2e` | 22 casos en navegador correctos (ES/EN) |
 | axe-core WCAG 2 A/AA y 2.1 AA | Sin infracciones detectadas en inicio, reglas, archivo, pregunta, revelación y resultados |
 | `npm run check:renders` | Tres cambios de segundo sin nuevos renderizados de Game ni QuestionCard |
 | Instalación de dependencias | Cero vulnerabilidades notificadas por npm tras la actualización |
@@ -31,6 +31,11 @@ Los números corresponden a esta revisión. Los recursos de terceros y las depen
 - Borrar el resultado y recargar dejan la sesión vacía.
 - Rutas directas y desconocidas, un h1 por pantalla y sin desbordamiento horizontal.
 - Archivo con diez referencias visible sin JavaScript.
+- Versiones inglesas de portada, instrucciones y archivo servidas como HTML sin JavaScript.
+- Cambio ES/EN durante una pregunta, tras revelar la respuesta y en resultados, sin perder estado.
+- Modo seleccionado, pista utilizada y plazo del reloj conservados al cambiar idioma.
+- Footer académico con enlace a The Power Tech School y aviso solo en el idioma elegido.
+- Canónicas, alternativas `hreflang` y seis URL públicas en el sitemap comprobadas con un dominio de prueba; el dominio real sigue pendiente.
 - Enlace de salto al contenido y foco en pregunta y revelación.
 
 ## Medición de renderizados
@@ -49,7 +54,8 @@ Esta medición corresponde al paso de los segundos, no a todas las interacciones
 
 | Pantalla | Escritorio | Móvil |
 | --- | --- | --- |
-| Inicio | [Abrir](screenshots/inicio-desktop.jpg) | [Abrir](screenshots/inicio-mobile.jpg) |
+| Inicio ES | [Abrir](screenshots/inicio-desktop.jpg) | [Abrir](screenshots/inicio-mobile.jpg) |
+| Inicio EN | [Abrir](screenshots/inicio-en-desktop.jpg) | [Abrir](screenshots/inicio-en-mobile.jpg) |
 | Instrucciones | [Abrir](screenshots/instrucciones-desktop.jpg) | [Abrir](screenshots/instrucciones-mobile.jpg) |
 | Archivo | [Abrir](screenshots/archivo-desktop.jpg) | [Abrir](screenshots/archivo-mobile.jpg) |
 | Partida | [Abrir](screenshots/partida-desktop.jpg) | [Abrir](screenshots/partida-mobile.jpg) |

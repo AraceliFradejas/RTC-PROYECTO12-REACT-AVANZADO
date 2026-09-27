@@ -94,11 +94,19 @@ Las opciones de modo son radios dentro de un fieldset con legend. Las respuestas
 
 Se proporciona foco visible, enlace para saltar al contenido, foco al cambiar de pregunta y al mostrar la revelación. La cuenta atrás no interrumpe la lectura cada segundo. El modo sin prisa permite utilizar la experiencia sin un límite de tiempo. Las transiciones se desactivan cuando se solicita movimiento reducido.
 
+### Versiones en castellano e inglés británico
+
+El selector ES/EN cambia entre rutas equivalentes sin recargar. `LanguageProvider` obtiene el idioma de la URL y proporciona traducciones y enlaces localizados; `GameProvider` conserva la misma partida. No se utilizan mecanismos de almacenamiento para recordar el idioma: la propia dirección permite volver a la versión elegida.
+
+Se traducen portada, navegación, reglas, archivo, pistas, explicaciones, créditos, estados, resultados, etiquetas accesibles y footer. Los fragmentos literarios y los títulos de obras conservan su texto original. La variante de la interfaz inglesa es `en-GB`, sin modernizar los textos de Shakespeare.
+
+El footer sigue la estructura académica de KelseTS Talks: autoría, referencia al máster Rock The Code, enlace a The Power Tech School y aviso educativo y de ausencia de afiliación. Solo muestra el idioma seleccionado.
+
 ## 9. SEO y acceso para asistentes
 
 El build renderiza la misma aplicación React a HTML para que portada, reglas y fuentes puedan leerse sin ejecutar JavaScript. Después React hidrata ese contenido y añade el juego. La página de partida no incluye preguntas abiertas en su HTML inicial porque no existe una sesión al solicitarla.
 
-Los metadatos se definen por ruta. Hay descripción, autoría, Open Graph, Twitter Card y datos estructurados WebApplication coherentes con la aplicación visible. Se excluyen de indexación partida, resultados y página 404. No se inventan valoraciones, estadísticas ni afiliaciones.
+Los metadatos se definen por ruta e idioma. El build genera doce páginas HTML, contando los estados vacíos y las páginas 404 de ambas versiones. Se actualizan `lang`, `og:locale` y los datos estructurados; con dominio configurado se incluyen canónicas y alternativas `hreflang`. Hay descripción, autoría, Open Graph, Twitter Card y datos estructurados WebApplication coherentes con la aplicación visible. Se excluyen de indexación partida, resultados y página 404. No se inventan valoraciones, estadísticas ni afiliaciones.
 
 `llms.txt` resume el propósito y enlaza las fuentes. Es un recurso informativo, no una garantía de posicionamiento. Las canónicas y el sitemap solo se generan cuando se proporciona `SITE_URL`, para no publicar direcciones ficticias. Queda pendiente configurar el dominio real y revisar la respuesta del alojamiento.
 
@@ -113,7 +121,7 @@ Los metadatos se definen por ruta. Hay descripción, autoría, Open Graph, Twitt
 | CSS demasiado extenso | Estilos distribuidos por responsabilidad |
 | Mezcla de estrategias para crear DOM | JSX en los componentes; las reglas no manipulan DOM |
 | Falta de reinicio en algún juego | Nueva partida, repaso, abandono y borrado de resultado |
-| Textos de ambos idiomas simultáneos | Interfaz única en castellano; citas originales identificadas |
+| Textos de ambos idiomas simultáneos | Selector ES/EN; solo aparece el idioma elegido y se identifican las citas originales |
 | Funciones exportadas sin uso | Revisión con lint y estructura reducida |
 | Mensaje de turno al terminar | Fases explícitas; se ocultan las opciones y el reloj al responder |
 | Datos duplicados en la semilla | Prueba de unicidad de identificadores, obras y fragmentos |

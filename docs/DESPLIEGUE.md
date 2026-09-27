@@ -20,13 +20,14 @@ Sustituir el ejemplo por el dominio real. No publicar el dominio de ejemplo.
 
 ## Rutas y HTML
 
-El build genera `index.html`, `instrucciones.html`, `archivo.html`, `partida.html`, `resultados.html` y `404.html`. `cleanUrls` sirve las páginas de Vercel sin extensión. Las rutas editoriales se pueden leer sin JavaScript; React las hidrata al cargar. Una URL desconocida debe devolver HTTP 404 con la página correspondiente.
+El build genera `index.html`, `instrucciones.html`, `archivo.html`, `partida.html`, `resultados.html` y `404.html`. También genera `en.html` y las páginas equivalentes dentro de `en/` (`how-to-play`, `archive`, `game`, `results` y `404`). `cleanUrls` sirve las páginas de Vercel sin extensión. Las rutas editoriales se pueden leer sin JavaScript; React las hidrata al cargar. Una URL desconocida debe devolver HTTP 404 con la página correspondiente.
 
 No se debe añadir una reescritura global que envíe todas las peticiones a la portada: impediría que los rastreadores recibieran el HTML propio de cada página.
 
 ## Comprobación de producción pendiente
 
-- Abrir inicio, reglas y archivo directamente y recargar cada ruta.
+- Abrir inicio, reglas y archivo directamente y recargar cada ruta, tanto en ES como en EN.
+- Comprobar `lang="en-GB"`, `og:locale="en_GB"` y alternativas `hreflang` en la versión inglesa.
 - Comprobar el contenido de `/archivo` con JavaScript desactivado.
 - Confirmar título, descripción, canónica y `og:url` con el dominio publicado.
 - Revisar `/robots.txt`, `/sitemap.xml` y `/llms.txt`.

@@ -2,7 +2,7 @@
 
 > Juego educativo independiente de Araceli Fradejas Muñoz para React avanzado, Rock The Code · The Power Tech School.
 
-Diez preguntas sobre la procedencia de fragmentos breves de canciones de Taylor Swift y obras de William Shakespeare. Interfaz en castellano, fragmentos en inglés. Modos sin prisa y contrarreloj (20 segundos). Tres pistas por ronda. Cada acierto suma 100 puntos, o 50 con pista. Los errores pueden repasarse sin reloj. El estado se conserva únicamente en React durante la sesión y se pierde al recargar.
+Diez preguntas sobre la procedencia de fragmentos breves de canciones de Taylor Swift y obras de William Shakespeare. Interfaz en castellano e inglés británico (en-GB), con selector ES/EN. Los fragmentos conservan su inglés original. Cambiar idioma mantiene la partida y el plazo del reloj. Modos sin prisa y contrarreloj (20 segundos). Tres pistas por ronda. Cada acierto suma 100 puntos, o 50 con pista. Los errores pueden repasarse sin reloj. El estado se conserva únicamente en React durante la sesión y se pierde al recargar.
 
 - [Inicio](/): selección de modo.
 - [Cómo jugar](/instrucciones): reglas, controles y límites.
@@ -10,3 +10,11 @@ Diez preguntas sobre la procedencia de fragmentos breves de canciones de Taylor 
 - [Repositorio](https://github.com/AraceliFradejas/RTC-PROYECTO12-REACT-AVANZADO): código y memoria técnica.
 
 No es un producto oficial de Taylor Swift ni está afiliado a la artista. No ofrece cuentas, reproducción de música ni clasificación global. Las explicaciones son comentarios del proyecto, no declaraciones de los autores citados.
+
+## British English
+
+- [Home](/en): choose a game mode.
+- [How to play](/en/how-to-play): rules and controls.
+- [The archive](/en/archive): works, sources and credits.
+
+An independent academic project for the Rock The Code master’s programme at The Power Tech School. The footer links to the school and displays the notice in the selected language. Game state stays in React and is cleared on refresh. Language follows the URL.

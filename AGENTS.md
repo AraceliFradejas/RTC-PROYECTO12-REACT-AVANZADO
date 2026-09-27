@@ -1,6 +1,6 @@
 # Indicaciones del proyecto
 
-- Mantener la interfaz y la documentación en castellano. Los títulos de obras y los fragmentos originales pueden conservar el inglés.
+- Mantener la interfaz completa en castellano e inglés británico (en-GB), con selector ES/EN y un solo idioma visible. La documentación principal y los commits se redactan en castellano. Los títulos de obras y los fragmentos conservan el idioma original.
 - Los commits nuevos deben tener como autora y committer a Araceli Fradejas Muñoz, con `155460435+AraceliFradejas@users.noreply.github.com`, y mensajes en castellano. No añadir trailers de coautoría. No reescribir el historial previo.
 - Esta entrega utiliza estado en React, sin localStorage, sessionStorage, cookies de partidas ni bases de datos.
 - Conservar `react-router-dom`, el reducer y los hooks propios. Mantener aisladas las actualizaciones del temporizador.

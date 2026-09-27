@@ -7,3 +7,12 @@ export const pages = {
   '/resultados': { title: 'Tu resultado', description: 'Aciertos, pistas y una segunda lectura de tus errores.', private: true },
 };
 export const notFound = { title: 'Página no encontrada', description: 'Esta página no forma parte del archivo.', private: true };
+
+export const englishPages = {
+  '/': { title: 'Taylor Swift or Shakespeare?', description: 'A ten-question game where music meets literature. Recognise excerpts from Taylor Swift and Shakespeare, discover their works and revisit your mistakes.' },
+  '/instrucciones': { title: 'How to play', description: 'The rules of The Tortured Poets Challenge: ten questions, three hints, unhurried or timed play, and a second reading of your mistakes.' },
+  '/archivo': { title: 'The archive and its sources', description: 'Works, credits and sources for an educational game about Taylor Swift and William Shakespeare, created by Araceli Fradejas Muñoz.' },
+  '/partida': { title: 'Your game', description: 'Identify the source of each excerpt.', private: true },
+  '/resultados': { title: 'Your result', description: 'Correct answers, hints and a second reading of your mistakes.', private: true },
+};
+export const englishNotFound = { title: 'Page not found', description: 'This page is not part of the archive.', private: true };

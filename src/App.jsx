@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
+import { englishPaths } from './i18n/routes';
 import { GameProvider } from './context/GameContext';
 import Layout from './components/Layout';
 import EmptyState from './components/EmptyState';
@@ -11,9 +13,9 @@ import './styles/base.css';
 import './styles/layout.css';
 import './styles/reading.css';
 export default function App() {
-  return <GameProvider><Routes><Route element={<Layout/>}>
-    <Route index element={<Home/>}/><Route path="instrucciones" element={<Instructions/>}/>
-    <Route path="archivo" element={<Archive/>}/><Route path="partida" element={<Game/>}/>
-    <Route path="resultados" element={<Results/>}/><Route path="*" element={<EmptyState title="Esta página se ha traspapelado." description="La dirección que buscas no forma parte del archivo."/>}/>
-  </Route></Routes></GameProvider>;
+  const routes = [['/', <Home/>], ['/instrucciones', <Instructions/>], ['/archivo', <Archive/>], ['/partida', <Game/>], ['/resultados', <Results/>]];
+  return <LanguageProvider><GameProvider><Routes><Route element={<Layout/>}>
+    {routes.flatMap(([path, element]) => [path, englishPaths[path]].map(url => <Route key={url} path={url} element={element}/>))}
+    <Route path="*" element={<EmptyState title="Esta página se ha traspapelado." description="La dirección que buscas no forma parte del archivo."/>}/>
+  </Route></Routes></GameProvider></LanguageProvider>;
 }

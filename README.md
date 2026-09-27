@@ -4,6 +4,8 @@ Proyecto de **React avanzado** del máster **Rock The Code** de [The Power Tech 
 
 **¿Taylor Swift o Shakespeare?** Diez fragmentos, dos universos y una pequeña biblioteca para descubrir la historia detrás de cada respuesta.
 
+[Versión en castellano](#the-tortured-poets-challenge) · [English version](#english-version)
+
 [Memoria técnica](MEMORIA.md) · [Revisión del enunciado](docs/REVISION-ENTREGA.md) · [Pruebas y accesibilidad](docs/VALIDACION.md) · [Despliegue](docs/DESPLIEGUE.md)
 
 ![Portada del juego en escritorio](docs/screenshots/inicio-desktop.jpg)
@@ -43,7 +45,7 @@ No hay backend, cuentas ni almacenamiento persistente. El estado vive en React: 
 - Nueva partida, abandono y borrado del resultado desde la interfaz.
 - Portada, instrucciones, archivo, partida, resultados y pantalla de ruta desconocida.
 
-La interfaz está en castellano. Los fragmentos conservan su inglés original y se identifican con `lang="en"`. «Taylor Swift» indica la procedencia de una canción de su repertorio; los créditos identifican también las coautorías musicales.
+La interfaz está disponible en **castellano e inglés británico**, con selector **ES/EN**. Cada versión tiene sus propias rutas: `/` y `/en`. El idioma se conserva al navegar y cambiarlo no borra la partida, las pistas ni el plazo del reloj. Los fragmentos conservan su inglés original y se identifican con `lang="en"`. «Taylor Swift» indica la procedencia de una canción de su repertorio; los créditos identifican también las coautorías musicales.
 
 ## Tecnologías
 
@@ -84,6 +86,7 @@ src/
   data/         # Catálogo con identificadores, créditos y fuentes
   game/         # Reducer puro y mezcla de preguntas
   hooks/        # Partida, temporizador y foco
+  i18n/         # Traducciones al inglés británico y rutas por idioma
   pages/        # Pantallas de la aplicación
   seo/          # Metadatos y renderizado a HTML
   styles/       # Base, estructura, portada, juego y lectura
@@ -96,7 +99,7 @@ docs/           # Memoria de comprobaciones y capturas reales
 
 HTML semántico, navegación con teclado, enlace para saltar al contenido, foco al cambiar de pregunta y al revelar la respuesta, señales que no dependen solo del color y respeto por movimiento reducido. El reloj no anuncia cada segundo mediante una región viva; la revelación recibe el foco al agotarse el tiempo.
 
-La compilación entrega HTML con contenido para las rutas, descripciones, títulos, Open Graph, Twitter Card, datos estructurados `WebApplication`, `robots.txt` y un archivo informativo `llms.txt`. Con `SITE_URL` configurada también genera canónicas y sitemap. Partida, resultados y página 404 llevan `noindex`.
+La compilación entrega HTML con contenido para las rutas, descripciones, títulos, Open Graph, Twitter Card, datos estructurados `WebApplication`, `robots.txt` y un archivo informativo `llms.txt`. Con `SITE_URL` configurada también genera canónicas, alternativas `hreflang` ES/EN y sitemap con las dos versiones. Partida, resultados y página 404 llevan `noindex`.
 
 Estas medidas facilitan el acceso al contenido. No garantizan posiciones en buscadores ni menciones de asistentes. [Alcance de la revisión](docs/VALIDACION.md).
 
@@ -107,3 +110,31 @@ Proyecto educativo e independiente, sin afiliación, autorización ni patrocinio
 **Araceli Fradejas Muñoz** · Rock The Code · The Power Tech School.
 
 [GitHub](https://github.com/AraceliFradejas) · [LinkedIn](https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/)
+
+
+## English version
+
+**The Tortured Poets Challenge** is an educational Advanced React project for the **Rock The Code master’s programme at [The Power Tech School](https://thepower.education/thepowermba/tech)**, created by **Araceli Fradejas Muñoz**.
+
+Taylor Swift or Shakespeare? Read ten brief excerpts, choose their source and discover the work behind each answer. The visual style takes inspiration from the paper, ink and intimate atmosphere of *The Tortured Poets Department*.
+
+### Features and languages
+
+- Complete Spanish and British English interfaces, with an ES/EN selector.
+- Unhurried mode or twenty seconds per question.
+- Three hints per round; 100 points per correct answer, or 50 with a hint.
+- Sources, songwriting credits and original commentary after every answer.
+- A results page and an untimed review of your mistakes.
+- Changing language preserves the current game, score, hints and deadline.
+
+The initial catalogue contains five songs and five plays. Their order changes between rounds. Excerpts remain in their original English. There are no accounts, recordings, complete lyrics or persistent game storage. Refreshing clears the game, whilst the language is retained by the URL.
+
+### Run locally
+
+Use Node.js 22.12 or later. Run `npm ci`, then `npm run dev`. Spanish starts at `http://127.0.0.1:5173/`; British English starts at `http://127.0.0.1:5173/en`.
+
+`npm test` checks rules and translations; `npm run test:e2e` checks browser journeys and accessibility; `npm run check:renders` measures timer updates. Run `npm run build` before checking the production build with `npm run preview`.
+
+Public pages are prerendered in both languages. Set the real deployment origin in `SITE_URL` to generate canonical URLs, language alternatives and the sitemap. Public deployment is still pending; the current evidence is from local testing. See the [technical report in Spanish](MEMORIA.md) and [validation record](docs/VALIDACION.md).
+
+This is an independent, unofficial academic project, with no affiliation to Taylor Swift or her representatives. Quoted works belong to their respective rights holders. The footer links to the school and displays the academic notice in the selected language only.
